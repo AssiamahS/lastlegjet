@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-27T13:54Z",
+ "updated": "2026-07-27T15:19Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
@@ -12,7 +12,7 @@
    "from_city": "Grand Marais",
    "to_city": "Omaha",
    "aircraft": "Cessna Citation Ultra",
-   "category": "Grand Marais \u2013 Omaha",
+   "category": "",
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$3,500"
@@ -54,7 +54,7 @@
    "from_city": "Savannah",
    "to_city": "Lincoln",
    "aircraft": "Cessna Citation Ultra",
-   "category": "Savannah \u2013 Lincoln",
+   "category": "",
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$5,000"
@@ -96,7 +96,7 @@
    "from_city": "Miami",
    "to_city": "Savannah",
    "aircraft": "Cessna Citation Ultra",
-   "category": "Miami \u2013 Savannah",
+   "category": "",
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$3,500"
@@ -110,7 +110,7 @@
    "from_city": "Colorado Springs",
    "to_city": "Great Falls",
    "aircraft": "Cessna Citation Ultra",
-   "category": "Colorado Springs \u2013 Great Falls",
+   "category": "",
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$3,500"
@@ -138,7 +138,7 @@
    "from_city": "Omaha",
    "to_city": "Lexington",
    "aircraft": "Cessna Citation Ultra",
-   "category": "Omaha \u2013 Lexington",
+   "category": "",
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$1,500"
@@ -152,7 +152,7 @@
    "from_city": "Omaha",
    "to_city": "Miami",
    "aircraft": "Cessna Citation Ultra",
-   "category": "Omaha \u2013 Miami",
+   "category": "",
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$5,000"
