@@ -185,18 +185,13 @@ footer p{max-width:80ch;margin-bottom:10px}
       </div>
       <table>
         <thead>
-          <tr><th>Date</th><th>Route</th><th>Aircraft</th><th>Seats</th><th>Price / seat</th><th>Status</th></tr>
+          <tr><th>Date</th><th>Route</th><th>Aircraft</th><th>Operator</th><th>Whole leg</th><th>Book</th></tr>
         </thead>
         <tbody id="board-body">
-          <tr><td class="dim">Jul 28</td><td data-flap>TEB → PBI</td><td class="dim">Citation XLS</td><td data-flap>6</td><td><span class="was">$4,800</span><span class="now">$490</span></td><td data-flap>OPEN</td></tr>
-          <tr><td class="dim">Jul 28</td><td data-flap>VNY → LAS</td><td class="dim">Phenom 300</td><td data-flap>5</td><td><span class="was">$3,200</span><span class="now">$340</span></td><td data-flap>OPEN</td></tr>
-          <tr><td class="dim">Jul 29</td><td data-flap>HPN → MIA</td><td class="dim">Challenger 350</td><td data-flap>8</td><td><span class="was">$6,900</span><span class="now">$720</span></td><td data-flap>3 LEFT</td></tr>
-          <tr><td class="dim">Jul 29</td><td data-flap>DAL → ASE</td><td class="dim">Citation X</td><td data-flap>7</td><td><span class="was">$5,400</span><span class="now">$610</span></td><td data-flap>OPEN</td></tr>
-          <tr><td class="dim">Jul 30</td><td data-flap>BED → ACK</td><td class="dim">Pilatus PC-12</td><td data-flap>7</td><td><span class="was">$1,900</span><span class="now">$210</span></td><td data-flap>FILLING</td></tr>
-          <tr><td class="dim">Jul 30</td><td data-flap>SJC → SUN</td><td class="dim">Praetor 500</td><td data-flap>8</td><td><span class="was">$7,200</span><span class="now">$780</span></td><td data-flap>OPEN</td></tr>
+          <tr><td class="dim" colspan="6">LOADING LIVE LEGS…</td></tr>
         </tbody>
       </table>
-      <div class="board-foot">Sample routes shown. Live inventory opens with our first operator partners — <b>join the alert list</b> to be first on board.</div>
+      <div class="board-foot" id="board-foot">Live empty-leg inventory syndicated from <a href="https://thelimitlesssky.com/empty-legs">Limitless Sky</a> — <b>tap a leg</b> to request the seat or the whole aircraft.</div>
     </div>
   </div>
 
@@ -296,8 +291,38 @@ footer p{max-width:80ch;margin-bottom:10px}
 </div>
 
 <script>
+const BOOK_EMAIL = 'sylvesterassiamahhcp@gmail.com';
+
+// Live board — legs.json is refreshed from the Limitless Sky feed by GitHub Actions
+(async function(){
+  const body = document.getElementById('board-body');
+  const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  try {
+    const res = await fetch('legs.json', {cache: 'no-store'});
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+    if (!data.legs.length) throw new Error('empty');
+    body.innerHTML = data.legs.map(l => {
+      const subject = encodeURIComponent(`LastLeg quote: ${l.from} → ${l.to} ${l.date} (${l.aircraft})`);
+      const mailBody = encodeURIComponent(
+        `I want this empty leg:\n\n${l.from_city} (${l.from}) → ${l.to_city} (${l.to})\nDate: ${l.date}\nAircraft: ${l.aircraft}\nOperator: ${l.operator}\nListed whole-leg price: ${l.price}\nRef: ${l.id}\n\nSeats needed: \nName: \nPhone: `);
+      return `<tr><td class="dim">${esc(l.date)}</td>`+
+        `<td data-flap>${esc(l.from)} → ${esc(l.to)}</td>`+
+        `<td class="dim">${esc(l.aircraft)}</td>`+
+        `<td class="dim">${esc(l.operator)}</td>`+
+        `<td><span class="now">${esc(l.price)}</span></td>`+
+        `<td><a href="mailto:${BOOK_EMAIL}?subject=${subject}&body=${mailBody}" style="color:inherit;text-decoration:underline">REQUEST →</a></td></tr>`;
+    }).join('');
+    document.getElementById('board-foot').innerHTML =
+      `Live empty-leg inventory syndicated from <a href="https://thelimitlesssky.com/empty-legs">Limitless Sky</a>, updated <b>${esc(data.updated)}</b> — tap <b>REQUEST</b> to lock a seat or the whole aircraft.`;
+  } catch (e) {
+    body.innerHTML = '<tr><td class="dim" colspan="6">BOARD OFFLINE — <a href="#alerts" style="color:inherit">JOIN THE ALERT LIST</a> FOR ROUTES BY EMAIL</td></tr>';
+  }
+  flap();
+})();
+
 // Split-flap settle animation on the departure board
-(function(){
+function flap(){
   const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789→ ";
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-flap]').forEach((cell, i) => {
@@ -319,7 +344,10 @@ footer p{max-width:80ch;margin-bottom:10px}
       }, start);
     });
   });
-  // FBO-style clock
+}
+
+// FBO-style clock
+(function(){
   const clock = document.getElementById('clock');
   function setClock(){
     clock.textContent = new Date().toLocaleTimeString('en-US',
