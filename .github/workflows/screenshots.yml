@@ -1,0 +1,61 @@
+name: Screenshots
+
+on:
+  workflow_dispatch:
+
+jobs:
+  shots:
+    name: App Store screenshots (simulator)
+    runs-on: macos-26
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: ios
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build for simulator
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project LastLeg.xcodeproj \
+            -scheme LastLeg \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro Max' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+
+      - name: Boot simulator & capture
+        run: |
+          xcrun simctl boot "iPhone 16 Pro Max" || true
+          xcrun simctl bootstatus "iPhone 16 Pro Max" -b
+          # clean marketing status bar
+          xcrun simctl status_bar "iPhone 16 Pro Max" override \
+            --time "9:41" --batteryState charged --batteryLevel 100 \
+            --cellularBars 4 --operatorName "" --wifiBars 3
+          APP=build/Build/Products/Debug-iphonesimulator/LastLeg.app
+          xcrun simctl install "iPhone 16 Pro Max" "$APP"
+          mkdir -p shots
+
+          xcrun simctl launch "iPhone 16 Pro Max" com.assiamah.lastleg
+          sleep 12   # remote legs.json fetch + render
+          xcrun simctl io "iPhone 16 Pro Max" screenshot shots/1-board.png
+
+          xcrun simctl terminate "iPhone 16 Pro Max" com.assiamah.lastleg || true
+          xcrun simctl launch "iPhone 16 Pro Max" com.assiamah.lastleg -uiShotDetail
+          sleep 14   # fetch + auto-open detail sheet
+          xcrun simctl io "iPhone 16 Pro Max" screenshot shots/2-detail.png
+
+          ls -la shots/
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: appstore-screenshots
+          path: ios/shots/*.png
+          if-no-files-found: error

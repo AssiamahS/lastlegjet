@@ -1,0 +1,1 @@
+- 2026-07-27: exportArchive "Cloud signing permission error / No profiles for X" with 8RF7P8XRQ9 ASC key — that key can't do cloud-managed DISTRIBUTION signing; KB93R49B9J can. Archive (dev signing) works with either, so the failure only shows at export. Diagnosed via GH secret-masking: successful runs show "Created via API (***)" in the cert name.

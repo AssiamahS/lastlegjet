@@ -27,6 +27,14 @@ struct BoardView: View {
             }
             .toolbarBackground(Brand.walnut, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .task {
+                // screenshot rig: -uiShotDetail auto-opens the first leg so CI
+                // can capture the detail sheet without tap automation
+                guard CommandLine.arguments.contains("-uiShotDetail") else { return }
+                while service.legs.isEmpty { try? await Task.sleep(for: .seconds(1)) }
+                try? await Task.sleep(for: .seconds(1))
+                selected = service.legs.first
+            }
             .sheet(item: $selected) { leg in
                 LegDetailView(leg: leg)
                     .presentationDetents([.medium, .large])
