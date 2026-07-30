@@ -20,36 +20,44 @@ jobs:
       - name: Generate Xcode project
         run: xcodegen generate
 
+      - name: Pick simulator
+        id: sim
+        run: |
+          DEV=$(xcrun simctl list devices available | grep -oE "iPhone [0-9]+ Pro Max" | head -1)
+          [ -z "$DEV" ] && DEV=$(xcrun simctl list devices available | grep -oE "iPhone [^(]+" | head -1 | xargs)
+          echo "device=$DEV" >> "$GITHUB_OUTPUT"
+          echo "using: $DEV"
+
       - name: Build for simulator
         run: |
           set -o pipefail
           xcodebuild build \
             -project LastLeg.xcodeproj \
             -scheme LastLeg \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro Max' \
+            -destination "platform=iOS Simulator,name=${{ steps.sim.outputs.device }}" \
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
 
       - name: Boot simulator & capture
         run: |
-          xcrun simctl boot "iPhone 16 Pro Max" || true
-          xcrun simctl bootstatus "iPhone 16 Pro Max" -b
+          xcrun simctl boot "${{ steps.sim.outputs.device }}" || true
+          xcrun simctl bootstatus "${{ steps.sim.outputs.device }}" -b
           # clean marketing status bar
-          xcrun simctl status_bar "iPhone 16 Pro Max" override \
+          xcrun simctl status_bar "${{ steps.sim.outputs.device }}" override \
             --time "9:41" --batteryState charged --batteryLevel 100 \
             --cellularBars 4 --operatorName "" --wifiBars 3
           APP=build/Build/Products/Debug-iphonesimulator/LastLeg.app
-          xcrun simctl install "iPhone 16 Pro Max" "$APP"
+          xcrun simctl install "${{ steps.sim.outputs.device }}" "$APP"
           mkdir -p shots
 
-          xcrun simctl launch "iPhone 16 Pro Max" com.assiamah.lastleg
+          xcrun simctl launch "${{ steps.sim.outputs.device }}" com.assiamah.lastleg
           sleep 12   # remote legs.json fetch + render
-          xcrun simctl io "iPhone 16 Pro Max" screenshot shots/1-board.png
+          xcrun simctl io "${{ steps.sim.outputs.device }}" screenshot shots/1-board.png
 
-          xcrun simctl terminate "iPhone 16 Pro Max" com.assiamah.lastleg || true
-          xcrun simctl launch "iPhone 16 Pro Max" com.assiamah.lastleg -uiShotDetail
+          xcrun simctl terminate "${{ steps.sim.outputs.device }}" com.assiamah.lastleg || true
+          xcrun simctl launch "${{ steps.sim.outputs.device }}" com.assiamah.lastleg -uiShotDetail
           sleep 14   # fetch + auto-open detail sheet
-          xcrun simctl io "iPhone 16 Pro Max" screenshot shots/2-detail.png
+          xcrun simctl io "${{ steps.sim.outputs.device }}" screenshot shots/2-detail.png
 
           ls -la shots/
 
