@@ -1,22 +1,8 @@
 {
- "updated": "2026-08-02T19:36Z",
+ "updated": "2026-08-03T03:56Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-196935",
-   "date": "Aug 02",
-   "sort": "2026-08-02T00:00:00+00:00",
-   "from": "MAN",
-   "to": "CEQ",
-   "from_city": "Manchester",
-   "to_city": "Cannes",
-   "aircraft": "Embraer Phenom 300E",
-   "category": "Light",
-   "seats": 6,
-   "operator": "Sovereign Business Jets delete me",
-   "price": "\u00a39,560"
-  },
   {
    "id": "empty-leg-196799",
    "date": "Aug 03",
@@ -170,6 +156,20 @@
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$1,500"
+  },
+  {
+   "id": "empty-leg-196776",
+   "date": "Aug 20",
+   "sort": "2026-08-20T00:00:00+00:00",
+   "from": "LNK",
+   "to": "ORD",
+   "from_city": "Lincoln",
+   "to_city": "Chicago",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$3,500"
   }
  ]
 }
