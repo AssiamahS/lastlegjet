@@ -1,22 +1,8 @@
 {
- "updated": "2026-08-03T20:00Z",
+ "updated": "2026-08-04T03:40Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-196799",
-   "date": "Aug 03",
-   "sort": "2026-08-03T00:00:00+00:00",
-   "from": "YVR",
-   "to": "YYC",
-   "from_city": "Vancouver",
-   "to_city": "Calgary",
-   "aircraft": "Challenger 300",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$8,900"
-  },
   {
    "id": "empty-leg-196950",
    "date": "Aug 04",
@@ -170,6 +156,20 @@
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$3,500"
+  },
+  {
+   "id": "empty-leg-196775",
+   "date": "Aug 20",
+   "sort": "2026-08-20T00:00:00+00:00",
+   "from": "LNK",
+   "to": "EAR",
+   "from_city": "Lincoln",
+   "to_city": "Kearney",
+   "aircraft": "Cessna Citation CJ1",
+   "category": "Light",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$1,500"
   }
  ]
 }
