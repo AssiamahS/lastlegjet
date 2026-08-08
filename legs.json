@@ -1,36 +1,8 @@
 {
- "updated": "2026-08-07T19:17Z",
+ "updated": "2026-08-08T02:23Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-197631",
-   "date": "Aug 07",
-   "sort": "2026-08-07T00:00:00+00:00",
-   "from": "LNK",
-   "to": "AIZ",
-   "from_city": "Lincoln",
-   "to_city": "Kaiser",
-   "aircraft": "Cessna Citation Excel",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$2,500"
-  },
-  {
-   "id": "empty-leg-197630",
-   "date": "Aug 07",
-   "sort": "2026-08-07T00:00:00+00:00",
-   "from": "TEX",
-   "to": "LNK",
-   "from_city": "Telluride",
-   "to_city": "Lincoln",
-   "aircraft": "Cessna Citation Ultra",
-   "category": "",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$3,500"
-  },
   {
    "id": "empty-leg-197634",
    "date": "Aug 08",
@@ -170,6 +142,34 @@
    "seats": 6,
    "operator": "Chartright Air, Inc",
    "price": "CA$5,100"
+  },
+  {
+   "id": "empty-leg-197642",
+   "date": "Aug 18",
+   "sort": "2026-08-18T00:00:00+00:00",
+   "from": "EGE",
+   "to": "LNK",
+   "from_city": "Eagle",
+   "to_city": "Lincoln",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$3,500"
+  },
+  {
+   "id": "empty-leg-197641",
+   "date": "Aug 18",
+   "sort": "2026-08-18T00:00:00+00:00",
+   "from": "SAA",
+   "to": "LNK",
+   "from_city": "Saratoga",
+   "to_city": "Lincoln",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$3,500"
   }
  ]
 }
