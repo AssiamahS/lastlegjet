@@ -1,36 +1,8 @@
 {
- "updated": "2026-08-09T19:02Z",
+ "updated": "2026-08-10T02:36Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-197919",
-   "date": "Aug 09",
-   "sort": "2026-08-09T00:00:00+00:00",
-   "from": "LNK",
-   "to": "JAC",
-   "from_city": "Lincoln",
-   "to_city": "Jackson",
-   "aircraft": "Cessna Citation XLS",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$5,000"
-  },
-  {
-   "id": "empty-leg-197896",
-   "date": "Aug 09",
-   "sort": "2026-08-09T00:00:00+00:00",
-   "from": "BFI",
-   "to": "YQR",
-   "from_city": "Seattle",
-   "to_city": "Regina",
-   "aircraft": "Global 5000",
-   "category": "Heavy",
-   "seats": 10,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$22,000"
-  },
   {
    "id": "empty-leg-197897",
    "date": "Aug 10",
@@ -170,6 +142,34 @@
    "seats": 10,
    "operator": "Chartright Air, Inc",
    "price": "CA$22,000"
+  },
+  {
+   "id": "empty-leg-197922",
+   "date": "Dec 02",
+   "sort": "2026-12-02T00:00:00+00:00",
+   "from": "KORC",
+   "to": "OMA",
+   "from_city": "Orange City",
+   "to_city": "Omaha",
+   "aircraft": "Cessna Citation Excel",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$2,500"
+  },
+  {
+   "id": "empty-leg-197923",
+   "date": "Dec 05",
+   "sort": "2026-12-05T00:00:00+00:00",
+   "from": "OMA",
+   "to": "KORC",
+   "from_city": "Omaha",
+   "to_city": "Orange City",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$2,500"
   }
  ]
 }
