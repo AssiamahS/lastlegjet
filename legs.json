@@ -1,22 +1,8 @@
 {
- "updated": "2026-08-15T18:48Z",
+ "updated": "2026-08-16T01:58Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-198942",
-   "date": "Aug 15",
-   "sort": "2026-08-15T00:00:00+00:00",
-   "from": "VTN",
-   "to": "LNK",
-   "from_city": "Valentine",
-   "to_city": "Lincoln",
-   "aircraft": "Cessna Citation V",
-   "category": "",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$1,500"
-  },
   {
    "id": "empty-leg-198943",
    "date": "Aug 16",
@@ -170,6 +156,20 @@
    "seats": 6,
    "operator": "Chartright Air, Inc",
    "price": "CA$22,700"
+  },
+  {
+   "id": "empty-leg-198969",
+   "date": "Aug 23",
+   "sort": "2026-08-23T00:00:00+00:00",
+   "from": "YYZ",
+   "to": "APF",
+   "from_city": "Toronto",
+   "to_city": "Naples",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$19,400"
   }
  ]
 }
