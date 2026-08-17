@@ -1,36 +1,8 @@
 {
- "updated": "2026-08-17T01:56Z",
+ "updated": "2026-08-17T07:17Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-199277",
-   "date": "Aug 17",
-   "sort": "2026-08-17T00:00:00+00:00",
-   "from": "YYZ",
-   "to": "AZO",
-   "from_city": "Toronto",
-   "to_city": "Kalamazoo",
-   "aircraft": "Challenger 350",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$10,800"
-  },
-  {
-   "id": "empty-leg-199079",
-   "date": "Aug 17",
-   "sort": "2026-08-17T00:00:00+00:00",
-   "from": "BFI",
-   "to": "RDM",
-   "from_city": "Seattle",
-   "to_city": "Redmond",
-   "aircraft": "Embraer Phenom 300",
-   "category": "Light",
-   "seats": 6,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$10,230"
-  },
   {
    "id": "empty-leg-199081",
    "date": "Aug 18",
@@ -44,6 +16,20 @@
    "seats": 7,
    "operator": "International Jet Aviation Services, Inc",
    "price": "$14,415"
+  },
+  {
+   "id": "empty-leg-199312",
+   "date": "Aug 19",
+   "sort": "2026-08-19T00:00:00+00:00",
+   "from": "YVR",
+   "to": "YYC",
+   "from_city": "Vancouver",
+   "to_city": "Calgary",
+   "aircraft": "Falcon 2000LXS",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$10,000"
   },
   {
    "id": "empty-leg-199279",
@@ -128,6 +114,20 @@
    "seats": 7,
    "operator": "International Jet Aviation Services, Inc",
    "price": "$19,140"
+  },
+  {
+   "id": "empty-leg-199305",
+   "date": "Aug 29",
+   "sort": "2026-08-29T00:00:00+00:00",
+   "from": "KJYR",
+   "to": "KEDC",
+   "from_city": "York",
+   "to_city": "Austin",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$3,500"
   },
   {
    "id": "empty-leg-199255",
