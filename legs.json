@@ -1,21 +1,35 @@
 {
- "updated": "2026-08-18T01:52Z",
+ "updated": "2026-08-18T07:06Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
   {
-   "id": "empty-leg-199081",
+   "id": "empty-leg-199422",
    "date": "Aug 18",
    "sort": "2026-08-18T00:00:00+00:00",
-   "from": "APA",
-   "to": "GPI",
-   "from_city": "Denver",
-   "to_city": "Guapi",
-   "aircraft": "Learjet 60",
+   "from": "FMY",
+   "to": "VNY",
+   "from_city": "Fort Myers",
+   "to_city": "Van Nuys",
+   "aircraft": "Challenger 601-3R",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "Magellan Jets",
+   "price": "$46,741"
+  },
+  {
+   "id": "empty-leg-199421",
+   "date": "Aug 18",
+   "sort": "2026-08-18T00:00:00+00:00",
+   "from": "LOZ",
+   "to": "GVL",
+   "from_city": "London",
+   "to_city": "Gainesville",
+   "aircraft": "Cessna Citation Excel",
    "category": "Midsize",
    "seats": 7,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$14,415"
+   "operator": "Magellan Jets",
+   "price": "$3,510"
   },
   {
    "id": "empty-leg-199312",
@@ -74,20 +88,6 @@
    "price": "$1,500"
   },
   {
-   "id": "empty-leg-199085",
-   "date": "Aug 19",
-   "sort": "2026-08-19T00:00:00+00:00",
-   "from": "SRQ",
-   "to": "TEB",
-   "from_city": "Sarasota",
-   "to_city": "New York City",
-   "aircraft": "Embraer Legacy 500",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$19,140"
-  },
-  {
    "id": "empty-leg-199254",
    "date": "Aug 20",
    "sort": "2026-08-20T00:00:00+00:00",
@@ -102,18 +102,32 @@
    "price": "$1,500"
   },
   {
-   "id": "empty-leg-199087",
-   "date": "Aug 20",
-   "sort": "2026-08-20T00:00:00+00:00",
-   "from": "GUA",
-   "to": "FLL",
-   "from_city": "Guatemala City",
-   "to_city": "Fort Lauderdale",
-   "aircraft": "Embraer Legacy 500",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$19,140"
+   "id": "empty-leg-199509",
+   "date": "Aug 22",
+   "sort": "2026-08-22T00:00:00+00:00",
+   "from": "FOK",
+   "to": "YYZ",
+   "from_city": "Westhampton Beach",
+   "to_city": "Toronto",
+   "aircraft": "Challenger 300",
+   "category": "Super Midsize",
+   "seats": 8,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$12,100"
+  },
+  {
+   "id": "empty-leg-199510",
+   "date": "Aug 26",
+   "sort": "2026-08-26T00:00:00+00:00",
+   "from": "YYZ",
+   "to": "CLE",
+   "from_city": "Toronto",
+   "to_city": "Cleveland",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$5,100"
   },
   {
    "id": "empty-leg-199305",
@@ -156,20 +170,6 @@
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$3,500"
-  },
-  {
-   "id": "empty-leg-199257",
-   "date": "Sep 08",
-   "sort": "2026-09-08T00:00:00+00:00",
-   "from": "OMA",
-   "to": "TMB",
-   "from_city": "Omaha",
-   "to_city": "Miami",
-   "aircraft": "Cessna Citation XLS",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$7,500"
   }
  ]
 }
