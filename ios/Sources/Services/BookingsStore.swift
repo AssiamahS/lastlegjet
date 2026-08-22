@@ -61,22 +61,135 @@ final class BookingsStore: ObservableObject {
         return booking
     }
 
-    /// Mock payment: `POST /pay` then `POST /confirm-mock`. Locally this just flips the status.
-    func payAndConfirm(_ booking: Booking) async throws -> Booking {
-        if mode.isSample || booking.id.hasPrefix("local_") {
-            let payment = Payment(id: "local_pay_\(booking.id)", provider: "MOCK", status: "SUCCEEDED",
-                                  amountCents: booking.totalCents, currency: booking.currency)
-            let confirmed = booking.withStatus(.confirmed, payment: payment)
-            upsertLocal(confirmed)
-            return confirmed
+    // MARK: Payment rails
+
+    /// Rails for the checkout tabs. Sample mode uses the bundled capture (all four, mock);
+    /// a failed request falls back to card only so checkout never dead-ends.
+    func paymentMethods(currency: String) async -> [PaymentMethodInfo] {
+        if mode.isSample {
+            return PaymentMethodInfo.sorted(SampleData.paymentMethods())
         }
-        let pay: PayResponse = try await api.post("/bookings/\(booking.id)/pay", auth: true)
+        do {
+            let methods: [PaymentMethodInfo] = try await api.get(
+                "/payments/methods", query: [URLQueryItem(name: "currency", value: currency)], auth: true)
+            return PaymentMethodInfo.sorted(methods)
+        } catch let error as APIError where error.isUnreachable {
+            mode.offline = true
+            return PaymentMethodInfo.sorted(SampleData.paymentMethods())
+        } catch {
+            return PaymentMethodInfo.cardOnly(mode: mode.serverMeta?.paymentMode ?? "mock")
+        }
+    }
+
+    /// `POST /pay` for the chosen rail. Local bookings get a generated mock response.
+    func startPayment(_ booking: Booking, rail: PaymentRail, crypto: CryptoAsset? = nil) async throws -> PayResponse {
+        if isLocal(booking) {
+            return Self.localPayResponse(for: booking, rail: rail, crypto: crypto)
+        }
+        return try await api.post("/bookings/\(booking.id)/pay", body: PayRequest(method: rail, crypto: crypto), auth: true)
+    }
+
+    /// Card / Klarna checkout: `/pay` then `/confirm-mock` when the rail is in mock mode.
+    func payAndConfirm(_ booking: Booking, rail: PaymentRail) async throws -> Booking {
+        let pay = try await startPayment(booking, rail: rail)
         guard pay.isMock else {
-            throw APIError.server(statusCode: 501, message: "Live card payments aren't available in this build yet.")
+            throw APIError.server(statusCode: 501, message: "Live \(rail.defaultLabel) payments aren't available in this build yet.")
+        }
+        return try await confirmMock(booking)
+    }
+
+    /// Completes a mock CARD / KLARNA / CRYPTO payment (`POST /confirm-mock`).
+    func confirmMock(_ booking: Booking) async throws -> Booking {
+        if isLocal(booking) {
+            return confirmLocally(booking, provider: "MOCK")
         }
         let confirmed: Booking = try await api.post("/bookings/\(booking.id)/confirm-mock", auth: true)
         upsert(confirmed)
         return confirmed
+    }
+
+    /// Captures an approved PayPal order (`POST /paypal/capture`).
+    func capturePayPal(_ booking: Booking) async throws -> Booking {
+        if isLocal(booking) {
+            return confirmLocally(booking, provider: "PAYPAL")
+        }
+        let confirmed: Booking = try await api.post("/bookings/\(booking.id)/paypal/capture", auth: true)
+        upsert(confirmed)
+        return confirmed
+    }
+
+    /// Latest server state for one booking (used while waiting on a live crypto payment).
+    func refresh(_ booking: Booking) async throws -> Booking {
+        if isLocal(booking) { return bookings.first { $0.id == booking.id } ?? booking }
+        let latest: Booking = try await api.get("/bookings/\(booking.id)", auth: true)
+        upsert(latest)
+        return latest
+    }
+
+    private func isLocal(_ booking: Booking) -> Bool {
+        mode.isSample || booking.id.hasPrefix("local_")
+    }
+
+    private func confirmLocally(_ booking: Booking, provider: String) -> Booking {
+        let payment = Payment(id: "local_pay_\(booking.id)", provider: provider, status: "SUCCEEDED",
+                              amountCents: booking.totalCents, currency: booking.currency)
+        let confirmed = booking.withStatus(.confirmed, payment: payment)
+        upsertLocal(confirmed)
+        return confirmed
+    }
+
+    /// Mirrors the API's mock responses: PayPal gets a placeholder approval URL, crypto a simulated
+    /// rate-locked charge with a 15-minute expiry, card/Klarna a mock client secret.
+    private static func localPayResponse(for booking: Booking, rail: PaymentRail, crypto: CryptoAsset?) -> PayResponse {
+        let paymentId = "local_pay_\(booking.id)"
+        switch rail {
+        case .paypal:
+            return PayResponse(method: rail, mode: "mock", paymentId: paymentId, amountCents: booking.totalCents,
+                               currency: booking.currency, clientSecret: nil,
+                               redirectUrl: "lastleg://book/\(booking.id)/paypal-mock", crypto: nil)
+        case .crypto:
+            let asset = crypto ?? .btc
+            let rate = localRate(for: asset)
+            let amount = Double(booking.totalCents) / 100.0 / rate
+            let charge = CryptoCharge(asset: asset,
+                                      amount: String(format: "%.8f", amount),
+                                      address: localAddress(for: asset, seed: booking.id),
+                                      expiresAt: Date().addingTimeInterval(holdMinutes * 60),
+                                      rateLocked: "1 \(asset.rawValue) = \(String(format: "%.2f", rate)) \(booking.currency)",
+                                      hostedUrl: nil)
+            return PayResponse(method: rail, mode: "mock", paymentId: paymentId, amountCents: booking.totalCents,
+                               currency: booking.currency, clientSecret: nil, redirectUrl: nil, crypto: charge)
+        case .card, .klarna:
+            return PayResponse(method: rail, mode: "mock", paymentId: paymentId, amountCents: booking.totalCents,
+                               currency: booking.currency, clientSecret: "mock_secret_\(booking.id)",
+                               redirectUrl: nil, crypto: nil)
+        }
+    }
+
+    /// Same fixed quotes the API uses in mock mode (per unit, in the booking currency).
+    private static func localRate(for asset: CryptoAsset) -> Double {
+        switch asset {
+        case .btc: return 60_000
+        case .eth: return 3_000
+        case .usdc, .usdt: return 1
+        }
+    }
+
+    /// Deterministic fake wallet address per asset so the demo looks stable across re-renders.
+    private static func localAddress(for asset: CryptoAsset, seed: String) -> String {
+        let hexAlphabet = Array("0123456789abcdef")
+        let bech32Alphabet = Array("qpzry9x8gf2tvdw0s3jn54khce6mua7l")
+        var state = UInt64(truncatingIfNeeded: seed.utf8.reduce(5381) { ($0 &* 33) &+ UInt64($1) })
+        func next() -> Int {
+            state = state &* 6364136223846793005 &+ 1442695040888963407
+            return Int(state >> 33)
+        }
+        switch asset {
+        case .btc:
+            return "bc1q" + (0..<38).map { _ in String(bech32Alphabet[next() % bech32Alphabet.count]) }.joined()
+        case .eth, .usdc, .usdt:
+            return "0x" + (0..<40).map { _ in String(hexAlphabet[next() % hexAlphabet.count]) }.joined()
+        }
     }
 
     // MARK: Local (sample) bookings

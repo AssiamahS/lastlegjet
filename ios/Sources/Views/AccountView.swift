@@ -16,6 +16,7 @@ struct AccountView: View {
                         .padding(.top, 8)
                     if let user = session.user {
                         signedInCard(user)
+                        SecuritySection(user: user)
                     } else {
                         AuthFormView(onSuccess: {})
                     }
@@ -121,9 +122,17 @@ struct AccountView: View {
         if mode.forced { return "Sample mode — not contacting the server" }
         if mode.offline { return "Server unreachable — showing sample data" }
         if let meta = mode.serverMeta {
-            return "Connected · API v\(meta.version) · payments \(meta.paymentMode)\(meta.sampleData ? " · seed data" : "")"
+            return "Connected · API v\(meta.version) · payments \(meta.paymentMode)\(railsSummary(meta.rails))\(meta.sampleData ? " · seed data" : "")"
         }
         return "Connected"
+    }
+
+    /// " · 4 rails (mock)" / " · 4 rails (2 live)" from `/meta.rails`; empty for servers that predate it.
+    private func railsSummary(_ rails: PaymentRails?) -> String {
+        guard let rails = rails else { return "" }
+        let modes = [rails.card, rails.paypal, rails.klarna, rails.crypto]
+        let live = modes.filter { $0 != "mock" }.count
+        return " · \(modes.count) rails (\(live == 0 ? "mock" : "\(live) live"))"
     }
 
     private var footer: some View {
@@ -152,6 +161,7 @@ struct AuthFormView: View {
     @State private var password = ""
     @State private var firstName = ""
     @State private var lastName = ""
+    @State private var mfaCode = ""
 
     private var canSubmit: Bool {
         let base = !email.trimmingCharacters(in: .whitespaces).isEmpty && password.count >= 8
@@ -163,6 +173,37 @@ struct AuthFormView: View {
     }
 
     var body: some View {
+        if session.pendingMfaToken != nil {
+            mfaStep
+        } else {
+            credentialsForm
+        }
+    }
+
+    /// Second factor after `/auth/login` answered `mfaRequired`.
+    private var mfaStep: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Label("Two-factor authentication", systemImage: "lock.shield")
+                .font(.headline)
+                .foregroundStyle(Brand.cream)
+            Text("Enter the 6-digit code from your authenticator app to finish signing in.")
+                .font(.subheadline)
+                .foregroundStyle(Brand.muted)
+            MfaCodeForm(code: $mfaCode, errorMessage: session.errorMessage, isBusy: session.isBusy,
+                        submitTitle: "Verify") {
+                if await session.verifyMfa(code: mfaCode) { onSuccess() }
+            }
+            Button("Back to sign in") {
+                mfaCode = ""
+                session.cancelMfa()
+            }
+            .buttonStyle(SecondaryButtonStyle())
+            .disabled(session.isBusy)
+        }
+        .card()
+    }
+
+    private var credentialsForm: some View {
         VStack(alignment: .leading, spacing: 12) {
             Picker("Mode", selection: $isRegistering) {
                 Text("Sign In").tag(false)
@@ -206,12 +247,161 @@ struct AuthFormView: View {
     }
 
     private func submit() async {
-        let ok: Bool
         if isRegistering {
-            ok = await session.signUp(email: email, password: password, firstName: firstName, lastName: lastName)
-        } else {
-            ok = await session.signIn(email: email, password: password)
+            if await session.signUp(email: email, password: password, firstName: firstName, lastName: lastName) {
+                onSuccess()
+            }
+            return
         }
-        if ok { onSuccess() }
+        // `.mfaRequired` swaps this form for the code step; `.failed` shows `session.errorMessage`.
+        if await session.signIn(email: email, password: password) == .signedIn {
+            onSuccess()
+        }
+    }
+}
+
+/// Email verification + two-factor status from `/me`, with the actions to change them.
+struct SecuritySection: View {
+    let user: User
+
+    @EnvironmentObject private var session: SessionStore
+    @EnvironmentObject private var mode: AppMode
+
+    @State private var showMfaSetup = false
+    @State private var showMfaDisable = false
+    @State private var showTokenEntry = false
+    @State private var verificationToken = ""
+    @State private var isBusy = false
+    @State private var notice: String?
+    @State private var errorMessage: String?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            SectionTitle("Security")
+            VStack(alignment: .leading, spacing: 14) {
+                emailRow
+                Divider().overlay(Brand.inkLine)
+                mfaRow
+                if let notice = notice {
+                    Text(notice)
+                        .font(.caption)
+                        .foregroundStyle(Brand.success)
+                }
+                if let errorMessage = errorMessage {
+                    Text(errorMessage)
+                        .font(.caption)
+                        .foregroundStyle(Brand.danger)
+                }
+                if mode.isSample {
+                    Text("Security settings need the server — switch off sample data to change them.")
+                        .font(.caption)
+                        .foregroundStyle(Brand.muted)
+                }
+            }
+            .card()
+        }
+        .disabled(mode.isSample)
+        .sheet(isPresented: $showMfaSetup) {
+            MfaSetupSheet { notice = "Two-factor is on. You'll be asked for a code at every sign-in." }
+        }
+        .sheet(isPresented: $showMfaDisable) {
+            MfaDisableSheet { notice = "Two-factor is off." }
+        }
+        .task(id: user.id) { await session.refreshMe() }
+    }
+
+    private var emailRow: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Email")
+                        .font(.subheadline)
+                        .foregroundStyle(Brand.cream)
+                    Text(user.email)
+                        .font(.caption)
+                        .foregroundStyle(Brand.muted)
+                }
+                Spacer()
+                if let verifiedAt = user.emailVerifiedAt {
+                    Pill(text: "Verified \(DateText.short(verifiedAt))", systemImage: "checkmark.seal.fill", tint: Brand.success)
+                } else {
+                    Pill(text: "Not verified", systemImage: "exclamationmark.circle", tint: Brand.danger)
+                }
+            }
+            if !user.isEmailVerified {
+                HStack(spacing: 16) {
+                    Button("Resend verification") { Task { await resend() } }
+                    Button(showTokenEntry ? "Hide token entry" : "Enter token") { showTokenEntry.toggle() }
+                }
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(Brand.gold)
+                .disabled(isBusy)
+                if showTokenEntry {
+                    HStack(spacing: 8) {
+                        BrandField(title: "Token from the email", text: $verificationToken)
+                            .font(.footnote.monospaced())
+                        Button("Verify") { Task { await verify() } }
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Brand.gold)
+                            .disabled(verificationToken.trimmingCharacters(in: .whitespaces).count < 16 || isBusy)
+                    }
+                }
+            }
+        }
+    }
+
+    private var mfaRow: some View {
+        HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Two-factor authentication")
+                    .font(.subheadline)
+                    .foregroundStyle(Brand.cream)
+                Text(user.isMfaEnabled
+                     ? "Authenticator code required at sign-in"
+                     : "Add an authenticator app for a second sign-in step")
+                    .font(.caption)
+                    .foregroundStyle(Brand.muted)
+            }
+            Spacer()
+            if user.isMfaEnabled {
+                Button("Turn off") { showMfaDisable = true }
+                    .buttonStyle(.bordered)
+                    .tint(Brand.danger)
+            } else {
+                Button("Set up") { showMfaSetup = true }
+                    .buttonStyle(.borderedProminent)
+                    .tint(Brand.gold)
+                    .foregroundStyle(Brand.ink)
+            }
+        }
+        .font(.caption.weight(.semibold))
+    }
+
+    private func resend() async {
+        isBusy = true
+        notice = nil
+        errorMessage = nil
+        defer { isBusy = false }
+        do {
+            let sent = try await session.resendVerification()
+            notice = "Verification email sent — the link is valid until \(DateText.short(sent.expiresAt))."
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func verify() async {
+        isBusy = true
+        notice = nil
+        errorMessage = nil
+        defer { isBusy = false }
+        do {
+            try await session.verifyEmail(token: verificationToken)
+            verificationToken = ""
+            showTokenEntry = false
+            notice = "Email verified."
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 }

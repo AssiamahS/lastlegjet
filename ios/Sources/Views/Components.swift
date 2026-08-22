@@ -247,6 +247,54 @@ struct EmptyState: View {
     }
 }
 
+/// Copies `text` to the pasteboard and flashes a checkmark for a moment.
+struct CopyButton: View {
+    let text: String
+    var label: String = "Copy"
+
+    @State private var copied = false
+
+    var body: some View {
+        Button {
+            UIPasteboard.general.string = text
+            copied = true
+            Task {
+                try? await Task.sleep(for: .seconds(1.5))
+                copied = false
+            }
+        } label: {
+            Image(systemName: copied ? "checkmark" : "doc.on.doc")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(copied ? Brand.success : Brand.cream)
+                .frame(width: 40, height: 40)
+                .background(Brand.inkCard, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous).strokeBorder(Brand.inkLine))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(copied ? "Copied" : label)
+    }
+}
+
+/// Monospace value (wallet address, 2FA secret) with a copy button beside it.
+struct CopyableValue: View {
+    let value: String
+    var copyLabel: String = "Copy"
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 8) {
+            Text(value)
+                .font(.footnote.monospaced())
+                .foregroundStyle(Brand.cream)
+                .textSelection(.enabled)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(10)
+                .background(Brand.ink, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous).strokeBorder(Brand.inkLine))
+            CopyButton(text: value, label: copyLabel)
+        }
+    }
+}
+
 /// Navigation route for the confirmation screen (distinct from pushing a `Booking`, which opens payment).
 struct BookingConfirmationRoute: Hashable {
     let booking: Booking

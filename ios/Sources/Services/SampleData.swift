@@ -28,7 +28,21 @@ enum SampleData {
 
     /// Demo customer used when booking locally without a server.
     static let guestUser = User(id: "sample_user", email: "guest@lastlegjet.dev",
-                                firstName: "Guest", lastName: "Traveller", role: "CUSTOMER")
+                                firstName: "Guest", lastName: "Traveller", role: "CUSTOMER",
+                                emailVerifiedAt: nil, mfaEnabled: false)
+
+    /// `GET /payments/methods` as captured from the API in mock mode; all four rails enabled.
+    static func paymentMethods() -> [PaymentMethodInfo] {
+        if let bundled: [PaymentMethodInfo] = load("payment-methods"), !bundled.isEmpty {
+            return bundled
+        }
+        return [
+            .mock(.card, note: "Sandbox: no charge is made"),
+            .mock(.klarna, note: "Sandbox: no charge is made"),
+            .mock(.paypal, note: "Sandbox: approval page is simulated"),
+            .mock(.crypto, note: "Sandbox: address is simulated, rate locked 15 min"),
+        ]
+    }
 
     private static func load<T: Decodable>(_ name: String) -> T? {
         guard let url = Bundle.main.url(forResource: name, withExtension: "json"),

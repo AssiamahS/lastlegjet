@@ -1,0 +1,30 @@
+[
+  {
+    "method": "CARD",
+    "enabled": true,
+    "mode": "mock",
+    "label": "Card",
+    "note": "Sandbox: no charge is made"
+  },
+  {
+    "method": "KLARNA",
+    "enabled": true,
+    "mode": "mock",
+    "label": "Klarna",
+    "note": "Sandbox: no charge is made"
+  },
+  {
+    "method": "PAYPAL",
+    "enabled": true,
+    "mode": "mock",
+    "label": "PayPal",
+    "note": "Sandbox: approval page is simulated"
+  },
+  {
+    "method": "CRYPTO",
+    "enabled": true,
+    "mode": "mock",
+    "label": "Crypto",
+    "note": "Sandbox: address is simulated, rate locked 15 min"
+  }
+]
