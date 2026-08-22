@@ -1,50 +1,8 @@
 {
- "updated": "2026-08-21T18:58Z",
+ "updated": "2026-08-22T01:52Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-200235",
-   "date": "Aug 21",
-   "sort": "2026-08-21T00:00:00+00:00",
-   "from": "OQU",
-   "to": "MYR",
-   "from_city": "North Kingstown",
-   "to_city": "Myrtle Beach",
-   "aircraft": "Challenger 300",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Magellan Jets",
-   "price": "$13,689"
-  },
-  {
-   "id": "empty-leg-200234",
-   "date": "Aug 21",
-   "sort": "2026-08-21T00:00:00+00:00",
-   "from": "SFB",
-   "to": "TEB",
-   "from_city": "Orlando",
-   "to_city": "New York City",
-   "aircraft": "Hawker 850XP",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Magellan Jets",
-   "price": "$23,341"
-  },
-  {
-   "id": "empty-leg-200233",
-   "date": "Aug 21",
-   "sort": "2026-08-21T00:00:00+00:00",
-   "from": "EWB",
-   "to": "FRG",
-   "from_city": "New Bedford",
-   "to_city": "Farmingdale",
-   "aircraft": "Cessna Citation Excel",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Magellan Jets",
-   "price": "$3,978"
-  },
   {
    "id": "empty-leg-200132",
    "date": "Aug 23",
@@ -170,6 +128,48 @@
    "seats": 7,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$5,000"
+  },
+  {
+   "id": "empty-leg-200316",
+   "date": "Sep 08",
+   "sort": "2026-09-08T00:00:00+00:00",
+   "from": "OMA",
+   "to": "SBP",
+   "from_city": "Omaha",
+   "to_city": "San Luis Obispo",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$7,500"
+  },
+  {
+   "id": "empty-leg-200317",
+   "date": "Sep 10",
+   "sort": "2026-09-10T00:00:00+00:00",
+   "from": "OMA",
+   "to": "VTN",
+   "from_city": "Omaha",
+   "to_city": "Valentine",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$1,500"
+  },
+  {
+   "id": "empty-leg-200108",
+   "date": "Sep 10",
+   "sort": "2026-09-10T00:00:00+00:00",
+   "from": "LNK",
+   "to": "DSM",
+   "from_city": "Lincoln",
+   "to_city": "Des Moines",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$2,500"
   }
  ]
 }
