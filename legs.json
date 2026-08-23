@@ -1,36 +1,8 @@
 {
- "updated": "2026-08-22T18:50Z",
+ "updated": "2026-08-23T02:00Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-200390",
-   "date": "Aug 22",
-   "sort": "2026-08-22T00:00:00+00:00",
-   "from": "ROC",
-   "to": "SBM",
-   "from_city": "Rochester",
-   "to_city": "Sheboygan",
-   "aircraft": "Cessna Citation XLS+",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Magellan Jets",
-   "price": "$11,466"
-  },
-  {
-   "id": "empty-leg-200389",
-   "date": "Aug 22",
-   "sort": "2026-08-22T00:00:00+00:00",
-   "from": "PSP",
-   "to": "LAS",
-   "from_city": "Palm Springs",
-   "to_city": "Las Vegas",
-   "aircraft": "Challenger 300",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Magellan Jets",
-   "price": "$5,850"
-  },
   {
    "id": "empty-leg-200447",
    "date": "Aug 24",
@@ -168,6 +140,34 @@
    "aircraft": "Cessna Citation V",
    "category": "",
    "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$5,000"
+  },
+  {
+   "id": "empty-leg-200425",
+   "date": "Aug 30",
+   "sort": "2026-08-30T00:00:00+00:00",
+   "from": "CRQ",
+   "to": "SUN",
+   "from_city": "Caravelas",
+   "to_city": "Hailey",
+   "aircraft": "Embraer Phenom 300",
+   "category": "Light",
+   "seats": 6,
+   "operator": "International Jet Aviation Services, Inc",
+   "price": "$10,340"
+  },
+  {
+   "id": "empty-leg-200452",
+   "date": "Sep 04",
+   "sort": "2026-09-04T00:00:00+00:00",
+   "from": "HCR",
+   "to": "OMA",
+   "from_city": "Heber",
+   "to_city": "Omaha",
+   "aircraft": "Cessna Citation Excel",
+   "category": "Midsize",
+   "seats": 7,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$5,000"
   }
