@@ -1,50 +1,8 @@
 {
- "updated": "2026-08-24T19:01Z",
+ "updated": "2026-08-25T01:53Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-200447",
-   "date": "Aug 24",
-   "sort": "2026-08-24T00:00:00+00:00",
-   "from": "LYU",
-   "to": "LNK",
-   "from_city": "Ely",
-   "to_city": "Lincoln",
-   "aircraft": "Cessna Citation XLS",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$5,000"
-  },
-  {
-   "id": "empty-leg-200416",
-   "date": "Aug 24",
-   "sort": "2026-08-24T00:00:00+00:00",
-   "from": "SDL",
-   "to": "SAN",
-   "from_city": "Sundsvall",
-   "to_city": "San Diego",
-   "aircraft": "Gulfstream G280",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$7,260"
-  },
-  {
-   "id": "empty-leg-200415",
-   "date": "Aug 24",
-   "sort": "2026-08-24T00:00:00+00:00",
-   "from": "CRQ",
-   "to": "APA",
-   "from_city": "Caravelas",
-   "to_city": "Denver",
-   "aircraft": "Learjet 60",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$14,485"
-  },
   {
    "id": "empty-leg-200448",
    "date": "Aug 25",
@@ -170,6 +128,48 @@
    "seats": 7,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$5,000"
+  },
+  {
+   "id": "empty-leg-200451",
+   "date": "Sep 04",
+   "sort": "2026-09-04T00:00:00+00:00",
+   "from": "OUN",
+   "to": "LNK",
+   "from_city": "Norman",
+   "to_city": "Lincoln",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$5,000"
+  },
+  {
+   "id": "empty-leg-200450",
+   "date": "Sep 04",
+   "sort": "2026-09-04T00:00:00+00:00",
+   "from": "LNK",
+   "to": "EAR",
+   "from_city": "Lincoln",
+   "to_city": "Kearney",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$2,500"
+  },
+  {
+   "id": "empty-leg-200454",
+   "date": "Sep 16",
+   "sort": "2026-09-16T00:00:00+00:00",
+   "from": "AIZ",
+   "to": "OMA",
+   "from_city": "Kaiser",
+   "to_city": "Omaha",
+   "aircraft": "Cessna Citation V",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$1,500"
   }
  ]
 }
