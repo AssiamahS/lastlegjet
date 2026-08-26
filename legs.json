@@ -1,36 +1,8 @@
 {
- "updated": "2026-08-25T18:59Z",
+ "updated": "2026-08-26T01:59Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-200720",
-   "date": "Aug 25",
-   "sort": "2026-08-25T00:00:00+00:00",
-   "from": "ACY",
-   "to": "EWB",
-   "from_city": "Atlantic City",
-   "to_city": "New Bedford",
-   "aircraft": "Cessna Citation XLS+",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Magellan Jets",
-   "price": "$5,499"
-  },
-  {
-   "id": "empty-leg-200673",
-   "date": "Aug 25",
-   "sort": "2026-08-25T00:00:00+00:00",
-   "from": "LTN",
-   "to": "IBZ",
-   "from_city": "London",
-   "to_city": "Ibiza",
-   "aircraft": "Embraer Legacy 650",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Luxaviation Group Europe",
-   "price": "On request"
-  },
   {
    "id": "empty-leg-200646",
    "date": "Aug 26",
@@ -44,6 +16,34 @@
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$750"
+  },
+  {
+   "id": "empty-leg-200676",
+   "date": "Aug 26",
+   "sort": "2026-08-26T00:00:00+00:00",
+   "from": "LTN",
+   "to": "LPL",
+   "from_city": "London",
+   "to_city": "Liverpool",
+   "aircraft": "Embraer Legacy 600",
+   "category": "Super Midsize",
+   "seats": 8,
+   "operator": "Luxaviation Group Europe",
+   "price": "On request"
+  },
+  {
+   "id": "empty-leg-200675",
+   "date": "Aug 26",
+   "sort": "2026-08-26T00:00:00+00:00",
+   "from": "VCE",
+   "to": "ZRH",
+   "from_city": "Venice",
+   "to_city": "Zurich",
+   "aircraft": "Hawker 900XP",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Luxaviation Group Europe",
+   "price": "On request"
   },
   {
    "id": "empty-leg-200806",
