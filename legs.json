@@ -1,36 +1,8 @@
 {
- "updated": "2026-08-29T20:57Z",
+ "updated": "2026-08-30T05:27Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-201393",
-   "date": "Aug 29",
-   "sort": "2026-08-29T00:00:00+00:00",
-   "from": "YYZ",
-   "to": "MIA",
-   "from_city": "Toronto",
-   "to_city": "Miami",
-   "aircraft": "Challenger 650",
-   "category": "Heavy",
-   "seats": 10,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$29,500"
-  },
-  {
-   "id": "empty-leg-201352",
-   "date": "Aug 29",
-   "sort": "2026-08-29T00:00:00+00:00",
-   "from": "KJYR",
-   "to": "PIR",
-   "from_city": "York",
-   "to_city": "Pierre",
-   "aircraft": "Cessna Citation Encore",
-   "category": "",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$1,500"
-  },
   {
    "id": "empty-leg-201396",
    "date": "Aug 31",
@@ -170,6 +142,34 @@
    "seats": 7,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$2,500"
+  },
+  {
+   "id": "empty-leg-201354",
+   "date": "Sep 07",
+   "sort": "2026-09-07T00:00:00+00:00",
+   "from": "OMA",
+   "to": "OUN",
+   "from_city": "Omaha",
+   "to_city": "Norman",
+   "aircraft": "Cessna Citation Excel",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$5,000"
+  },
+  {
+   "id": "empty-leg-201357",
+   "date": "Sep 08",
+   "sort": "2026-09-08T00:00:00+00:00",
+   "from": "LNK",
+   "to": "EAR",
+   "from_city": "Lincoln",
+   "to_city": "Kearney",
+   "aircraft": "Cessna Citation Encore",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$1,500"
   }
  ]
 }
