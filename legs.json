@@ -1,36 +1,8 @@
 {
- "updated": "2026-09-02T21:05Z",
+ "updated": "2026-09-03T04:36Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-201672",
-   "date": "Sep 02",
-   "sort": "2026-09-02T00:00:00+00:00",
-   "from": "YUL",
-   "to": "TEB",
-   "from_city": "Montreal",
-   "to_city": "New York City",
-   "aircraft": "Challenger 650",
-   "category": "Heavy",
-   "seats": 10,
-   "operator": "",
-   "price": "$7,900"
-  },
-  {
-   "id": "empty-leg-201509",
-   "date": "Sep 02",
-   "sort": "2026-09-02T00:00:00+00:00",
-   "from": "SBA",
-   "to": "SDL",
-   "from_city": "Santa Barbara",
-   "to_city": "Sundsvall",
-   "aircraft": "Embraer Phenom 300",
-   "category": "Light",
-   "seats": 6,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$6,270"
-  },
   {
    "id": "empty-leg-201511",
    "date": "Sep 03",
@@ -44,6 +16,20 @@
    "seats": 7,
    "operator": "International Jet Aviation Services, Inc",
    "price": "$10,740"
+  },
+  {
+   "id": "empty-leg-201534",
+   "date": "Sep 03",
+   "sort": "2026-09-03T00:00:00+00:00",
+   "from": "LTN",
+   "to": "YYT",
+   "from_city": "London",
+   "to_city": "St. John's",
+   "aircraft": "Falcon 900DX",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "NovaJet Aviation Group",
+   "price": "On request"
   },
   {
    "id": "empty-leg-201673",
@@ -165,6 +151,20 @@
    "to": "LNK",
    "from_city": "Manhattan",
    "to_city": "Lincoln",
+   "aircraft": "Cessna Citation CJ1",
+   "category": "Light",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$1,500"
+  },
+  {
+   "id": "empty-leg-201543",
+   "date": "Oct 05",
+   "sort": "2026-10-05T00:00:00+00:00",
+   "from": "LNK",
+   "to": "IML",
+   "from_city": "Lincoln",
+   "to_city": "Imperial",
    "aircraft": "Cessna Citation CJ1",
    "category": "Light",
    "seats": 6,
