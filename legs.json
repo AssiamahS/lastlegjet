@@ -1,22 +1,8 @@
 {
- "updated": "2026-09-07T21:32Z",
+ "updated": "2026-09-08T04:41Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-202934",
-   "date": "Sep 07",
-   "sort": "2026-09-07T00:00:00+00:00",
-   "from": "TEB",
-   "to": "YYZ",
-   "from_city": "New York City",
-   "to_city": "Toronto",
-   "aircraft": "Cessna Citation Ultra",
-   "category": "",
-   "seats": 6,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$7,000"
-  },
   {
    "id": "empty-leg-203041",
    "date": "Sep 08",
@@ -170,6 +156,20 @@
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$1,500"
+  },
+  {
+   "id": "empty-leg-203045",
+   "date": "Sep 17",
+   "sort": "2026-09-17T00:00:00+00:00",
+   "from": "DFW",
+   "to": "AIZ",
+   "from_city": "Grapevine",
+   "to_city": "Kaiser",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$5,000"
   }
  ]
 }
