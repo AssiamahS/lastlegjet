@@ -1,50 +1,8 @@
 {
- "updated": "2026-09-09T20:58Z",
+ "updated": "2026-09-10T04:46Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-203659",
-   "date": "Sep 09",
-   "sort": "2026-09-09T00:00:00+00:00",
-   "from": "YYZ",
-   "to": "TEB",
-   "from_city": "Toronto",
-   "to_city": "New York City",
-   "aircraft": "Cessna Citation Ultra",
-   "category": "",
-   "seats": 6,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$5,100"
-  },
-  {
-   "id": "empty-leg-203562",
-   "date": "Sep 09",
-   "sort": "2026-09-09T00:00:00+00:00",
-   "from": "UAO",
-   "to": "LAS",
-   "from_city": "Aurora",
-   "to_city": "Las Vegas",
-   "aircraft": "HondaJet",
-   "category": "",
-   "seats": 6,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$6,623"
-  },
-  {
-   "id": "empty-leg-203561",
-   "date": "Sep 09",
-   "sort": "2026-09-09T00:00:00+00:00",
-   "from": "FLL",
-   "to": "MCO",
-   "from_city": "Fort Lauderdale",
-   "to_city": "Orlando",
-   "aircraft": "Embraer Phenom 300",
-   "category": "Light",
-   "seats": 6,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$10,230"
-  },
   {
    "id": "empty-leg-203564",
    "date": "Sep 10",
@@ -58,6 +16,34 @@
    "seats": 7,
    "operator": "International Jet Aviation Services, Inc",
    "price": "$12,945"
+  },
+  {
+   "id": "empty-leg-203593",
+   "date": "Sep 10",
+   "sort": "2026-09-10T00:00:00+00:00",
+   "from": "SWO",
+   "to": "SAT",
+   "from_city": "Stillwater",
+   "to_city": "San Antonio",
+   "aircraft": "Cessna Citation VII",
+   "category": "",
+   "seats": 6,
+   "operator": "Encore Jet Management, LLC",
+   "price": "On request"
+  },
+  {
+   "id": "empty-leg-203567",
+   "date": "Sep 10",
+   "sort": "2026-09-10T00:00:00+00:00",
+   "from": "SAA",
+   "to": "APA",
+   "from_city": "Saratoga",
+   "to_city": "Denver",
+   "aircraft": "Beechcraft King Air B200GT",
+   "category": "Turboprop",
+   "seats": 6,
+   "operator": "International Jet Aviation Services, Inc",
+   "price": "On request"
   },
   {
    "id": "empty-leg-203661",
@@ -170,6 +156,20 @@
    "seats": 8,
    "operator": "Chartright Air, Inc",
    "price": "CA$31,900"
+  },
+  {
+   "id": "empty-leg-203665",
+   "date": "Jan 10",
+   "sort": "2027-01-10T00:00:00+00:00",
+   "from": "YYC",
+   "to": "YLW",
+   "from_city": "Calgary",
+   "to_city": "Kelowna",
+   "aircraft": "Challenger 300",
+   "category": "Super Midsize",
+   "seats": 8,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$8,100"
   }
  ]
 }
