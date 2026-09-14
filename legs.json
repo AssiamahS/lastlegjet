@@ -1,8 +1,64 @@
 {
- "updated": "2026-09-14T05:00Z",
+ "updated": "2026-09-14T12:53Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-204430",
+   "date": "Sep 14",
+   "sort": "2026-09-14T00:00:00+00:00",
+   "from": "AIZ",
+   "to": "APA",
+   "from_city": "Kaiser",
+   "to_city": "Denver",
+   "aircraft": "Learjet 60",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "International Jet Aviation Services, Inc",
+   "price": "$13,785"
+  },
+  {
+   "id": "empty-leg-204433",
+   "date": "Sep 15",
+   "sort": "2026-09-15T00:00:00+00:00",
+   "from": "SBP",
+   "to": "APA",
+   "from_city": "San Luis Obispo",
+   "to_city": "Denver",
+   "aircraft": "Learjet 60",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "International Jet Aviation Services, Inc",
+   "price": "$15,010"
+  },
+  {
+   "id": "empty-leg-204432",
+   "date": "Sep 15",
+   "sort": "2026-09-15T00:00:00+00:00",
+   "from": "LAP",
+   "to": "APA",
+   "from_city": "La Paz",
+   "to_city": "Denver",
+   "aircraft": "Learjet 55",
+   "category": "",
+   "seats": 6,
+   "operator": "International Jet Aviation Services, Inc",
+   "price": "$17,286"
+  },
+  {
+   "id": "empty-leg-204431",
+   "date": "Sep 15",
+   "sort": "2026-09-15T00:00:00+00:00",
+   "from": "LAS",
+   "to": "SBA",
+   "from_city": "Las Vegas",
+   "to_city": "Santa Barbara",
+   "aircraft": "HondaJet",
+   "category": "",
+   "seats": 6,
+   "operator": "International Jet Aviation Services, Inc",
+   "price": "$4,400"
+  },
   {
    "id": "empty-leg-204310",
    "date": "Sep 15",
@@ -88,6 +144,20 @@
    "price": "$1,500"
   },
   {
+   "id": "empty-leg-204468",
+   "date": "Sep 20",
+   "sort": "2026-09-20T00:00:00+00:00",
+   "from": "CLE",
+   "to": "YKF",
+   "from_city": "Cleveland",
+   "to_city": "Kitchener",
+   "aircraft": "Challenger 604",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$5,400"
+  },
+  {
    "id": "empty-leg-204346",
    "date": "Sep 21",
    "sort": "2026-09-21T00:00:00+00:00",
@@ -100,76 +170,6 @@
    "seats": 8,
    "operator": "Chartright Air, Inc",
    "price": "CA$9,500"
-  },
-  {
-   "id": "empty-leg-204178",
-   "date": "Sep 27",
-   "sort": "2026-09-27T00:00:00+00:00",
-   "from": "YAM",
-   "to": "YYZ",
-   "from_city": "Sault Ste. Marie",
-   "to_city": "Toronto",
-   "aircraft": "Cessna Citation XLS",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$5,800"
-  },
-  {
-   "id": "empty-leg-204177",
-   "date": "Sep 27",
-   "sort": "2026-09-27T00:00:00+00:00",
-   "from": "YYZ",
-   "to": "YUL",
-   "from_city": "Toronto",
-   "to_city": "Montreal",
-   "aircraft": "Cessna Citation XLS",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$5,800"
-  },
-  {
-   "id": "empty-leg-204315",
-   "date": "Sep 29",
-   "sort": "2026-09-29T00:00:00+00:00",
-   "from": "OMA",
-   "to": "EAR",
-   "from_city": "Omaha",
-   "to_city": "Kearney",
-   "aircraft": "Cessna Citation V",
-   "category": "",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$1,500"
-  },
-  {
-   "id": "empty-leg-204316",
-   "date": "Oct 01",
-   "sort": "2026-10-01T00:00:00+00:00",
-   "from": "EAR",
-   "to": "OMA",
-   "from_city": "Kearney",
-   "to_city": "Omaha",
-   "aircraft": "Cessna Citation V",
-   "category": "",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$1,500"
-  },
-  {
-   "id": "empty-leg-204317",
-   "date": "Oct 03",
-   "sort": "2026-10-03T00:00:00+00:00",
-   "from": "LNK",
-   "to": "MKC",
-   "from_city": "Lincoln",
-   "to_city": "Kansas City",
-   "aircraft": "Cessna Citation Ultra",
-   "category": "",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$1,500"
   }
  ]
 }
