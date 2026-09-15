@@ -1,22 +1,8 @@
 {
- "updated": "2026-09-14T21:51Z",
+ "updated": "2026-09-15T04:57Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-204430",
-   "date": "Sep 14",
-   "sort": "2026-09-14T00:00:00+00:00",
-   "from": "AIZ",
-   "to": "APA",
-   "from_city": "Kaiser",
-   "to_city": "Denver",
-   "aircraft": "Learjet 60",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$13,785"
-  },
   {
    "id": "empty-leg-204433",
    "date": "Sep 15",
@@ -170,6 +156,20 @@
    "seats": 8,
    "operator": "Chartright Air, Inc",
    "price": "CA$9,500"
+  },
+  {
+   "id": "empty-leg-204457",
+   "date": "Sep 22",
+   "sort": "2026-09-22T00:00:00+00:00",
+   "from": "MKC",
+   "to": "OMA",
+   "from_city": "Kansas City",
+   "to_city": "Omaha",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$2,500"
   }
  ]
 }
