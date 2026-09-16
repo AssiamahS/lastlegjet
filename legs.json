@@ -1,22 +1,8 @@
 {
- "updated": "2026-09-15T21:23Z",
+ "updated": "2026-09-16T04:52Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-204998",
-   "date": "Sep 15",
-   "sort": "2026-09-15T18:00:00+00:00",
-   "from": "SADF",
-   "to": "ASU",
-   "from_city": "San Fernando",
-   "to_city": "Asuncion",
-   "aircraft": "Learjet 60",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "FLYZAR",
-   "price": "$6,200"
-  },
   {
    "id": "empty-leg-204999",
    "date": "Sep 16",
@@ -170,6 +156,20 @@
    "seats": 6,
    "operator": "FLYZAR",
    "price": "$3,000"
+  },
+  {
+   "id": "empty-leg-204992",
+   "date": "Nov 23",
+   "sort": "2026-11-23T00:00:00+00:00",
+   "from": "OMA",
+   "to": "PSP",
+   "from_city": "Omaha",
+   "to_city": "Palm Springs",
+   "aircraft": "Cessna Citation Excel",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$7,500"
   }
  ]
 }
