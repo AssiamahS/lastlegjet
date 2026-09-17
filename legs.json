@@ -1,21 +1,21 @@
 {
- "updated": "2026-09-16T21:20Z",
+ "updated": "2026-09-17T04:56Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
   {
-   "id": "empty-leg-204999",
-   "date": "Sep 16",
-   "sort": "2026-09-16T07:44:00+00:00",
-   "from": "LPB",
-   "to": "SADF",
-   "from_city": "La Paz",
-   "to_city": "San Fernando",
-   "aircraft": "Learjet 60",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "FLYZAR",
-   "price": "$13,300"
+   "id": "empty-leg-204954",
+   "date": "Sep 17",
+   "sort": "2026-09-17T00:00:00+00:00",
+   "from": "SAT",
+   "to": "LBB",
+   "from_city": "San Antonio",
+   "to_city": "Lubbock",
+   "aircraft": "Beechjet 400A",
+   "category": "Light",
+   "seats": 6,
+   "operator": "Encore Jet Management, LLC",
+   "price": "On request"
   },
   {
    "id": "empty-leg-204927",
