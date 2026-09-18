@@ -1,20 +1,20 @@
 {
- "updated": "2026-09-17T21:25Z",
+ "updated": "2026-09-18T04:47Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
   {
-   "id": "empty-leg-204954",
-   "date": "Sep 17",
-   "sort": "2026-09-17T00:00:00+00:00",
-   "from": "SAT",
-   "to": "LBB",
-   "from_city": "San Antonio",
-   "to_city": "Lubbock",
-   "aircraft": "Beechjet 400A",
-   "category": "Light",
-   "seats": 6,
-   "operator": "Encore Jet Management, LLC",
+   "id": "empty-leg-205010",
+   "date": "Sep 18",
+   "sort": "2026-09-18T00:00:00+00:00",
+   "from": "ASE",
+   "to": "TUL",
+   "from_city": "Aspen",
+   "to_city": "Tulsa",
+   "aircraft": "Learjet 60XR",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "George J",
    "price": "On request"
   },
   {
