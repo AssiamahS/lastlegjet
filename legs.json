@@ -1,22 +1,8 @@
 {
- "updated": "2026-09-18T20:56Z",
+ "updated": "2026-09-19T04:41Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-205365",
-   "date": "Sep 18",
-   "sort": "2026-09-18T00:00:00+00:00",
-   "from": "VNY",
-   "to": "TEB",
-   "from_city": "Van Nuys",
-   "to_city": "New York City",
-   "aircraft": "Challenger 601-3A",
-   "category": "Heavy",
-   "seats": 10,
-   "operator": "Magellan Jets",
-   "price": "$45,079"
-  },
   {
    "id": "empty-leg-205286",
    "date": "Sep 20",
@@ -170,6 +156,20 @@
    "seats": 8,
    "operator": "Chartright Air, Inc",
    "price": "CA$11,200"
+  },
+  {
+   "id": "empty-leg-205292",
+   "date": "Nov 23",
+   "sort": "2026-11-23T00:00:00+00:00",
+   "from": "YVR",
+   "to": "YYC",
+   "from_city": "Vancouver",
+   "to_city": "Calgary",
+   "aircraft": "Challenger 300",
+   "category": "Super Midsize",
+   "seats": 8,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$9,500"
   }
  ]
 }
