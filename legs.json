@@ -1,8 +1,36 @@
 {
- "updated": "2026-09-20T04:56Z",
+ "updated": "2026-09-20T11:28Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-205688",
+   "date": "Sep 20",
+   "sort": "2026-09-20T00:00:00+00:00",
+   "from": "EWB",
+   "to": "APF",
+   "from_city": "New Bedford",
+   "to_city": "Naples",
+   "aircraft": "Cessna Citation XLS+",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Magellan Jets",
+   "price": "$16,470"
+  },
+  {
+   "id": "empty-leg-205687",
+   "date": "Sep 20",
+   "sort": "2026-09-20T00:00:00+00:00",
+   "from": "MLB",
+   "to": "APF",
+   "from_city": "Melbourne",
+   "to_city": "Naples",
+   "aircraft": "Cessna Citation Excel",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Magellan Jets",
+   "price": "$4,392"
+  },
   {
    "id": "empty-leg-205654",
    "date": "Sep 21",
@@ -16,20 +44,6 @@
    "seats": 6,
    "operator": "Chartright Air, Inc",
    "price": "CA$7,500"
-  },
-  {
-   "id": "empty-leg-205555",
-   "date": "Sep 21",
-   "sort": "2026-09-21T00:00:00+00:00",
-   "from": "FLL",
-   "to": "FDY",
-   "from_city": "Fort Lauderdale",
-   "to_city": "Findlay",
-   "aircraft": "Embraer Legacy 500",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$20,900"
   },
   {
    "id": "empty-leg-205655",
@@ -46,18 +60,32 @@
    "price": "CA$5,500"
   },
   {
-   "id": "empty-leg-205599",
+   "id": "empty-leg-205773",
+   "date": "Sep 23",
+   "sort": "2026-09-23T00:00:00+00:00",
+   "from": "AMS",
+   "to": "FRA",
+   "from_city": "Amsterdam",
+   "to_city": "Frankfurt am Main",
+   "aircraft": "Global 7500",
+   "category": "Ultra Long Range",
+   "seats": 12,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$15,900"
+  },
+  {
+   "id": "empty-leg-205746",
    "date": "Sep 24",
    "sort": "2026-09-24T00:00:00+00:00",
-   "from": "LNK",
-   "to": "DET",
-   "from_city": "Lincoln",
-   "to_city": "Detroit",
-   "aircraft": "Cessna Citation Excel",
-   "category": "Midsize",
-   "seats": 7,
+   "from": "BRD",
+   "to": "LNK",
+   "from_city": "Brainerd",
+   "to_city": "Lincoln",
+   "aircraft": "Cessna Citation CJ1",
+   "category": "Light",
+   "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
-   "price": "$5,000"
+   "price": "$3,500"
   },
   {
    "id": "empty-leg-205656",
@@ -74,46 +102,32 @@
    "price": "CA$6,000"
   },
   {
-   "id": "empty-leg-205564",
-   "date": "Sep 25",
-   "sort": "2026-09-25T00:00:00+00:00",
-   "from": "IWA",
-   "to": "CPS",
-   "from_city": "Ivanovo",
-   "to_city": "Cahokia",
-   "aircraft": "Gulfstream G280",
-   "category": "Super Midsize",
-   "seats": 8,
+   "id": "empty-leg-205717",
+   "date": "Sep 26",
+   "sort": "2026-09-26T00:00:00+00:00",
+   "from": "SBY",
+   "to": "APA",
+   "from_city": "Salisbury",
+   "to_city": "Denver",
+   "aircraft": "Learjet 60",
+   "category": "Midsize",
+   "seats": 7,
    "operator": "International Jet Aviation Services, Inc",
-   "price": "$17,490"
+   "price": "$20,435"
   },
   {
-   "id": "empty-leg-205600",
+   "id": "empty-leg-205747",
    "date": "Sep 27",
    "sort": "2026-09-27T00:00:00+00:00",
    "from": "LNK",
-   "to": "ORD",
+   "to": "BRD",
    "from_city": "Lincoln",
-   "to_city": "Chicago",
-   "aircraft": "Cessna Citation Excel",
-   "category": "Midsize",
-   "seats": 7,
+   "to_city": "Brainerd",
+   "aircraft": "Cessna Citation CJ1",
+   "category": "Light",
+   "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
-   "price": "$5,000"
-  },
-  {
-   "id": "empty-leg-205601",
-   "date": "Sep 30",
-   "sort": "2026-09-30T00:00:00+00:00",
-   "from": "OMA",
-   "to": "VTN",
-   "from_city": "Omaha",
-   "to_city": "Valentine",
-   "aircraft": "Cessna Citation Excel",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$2,500"
+   "price": "$3,500"
   },
   {
    "id": "empty-leg-205657",
@@ -144,32 +158,18 @@
    "price": "CA$10,900"
   },
   {
-   "id": "empty-leg-205602",
-   "date": "Oct 15",
-   "sort": "2026-10-15T00:00:00+00:00",
-   "from": "FAR",
-   "to": "LNK",
-   "from_city": "Fargo",
-   "to_city": "Lincoln",
-   "aircraft": "Cessna Citation Excel",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$5,000"
-  },
-  {
-   "id": "empty-leg-205603",
-   "date": "Oct 17",
-   "sort": "2026-10-17T00:00:00+00:00",
+   "id": "empty-leg-205748",
+   "date": "Oct 13",
+   "sort": "2026-10-13T00:00:00+00:00",
    "from": "LNK",
-   "to": "FAR",
+   "to": "LXN",
    "from_city": "Lincoln",
-   "to_city": "Fargo",
-   "aircraft": "Cessna Citation Excel",
-   "category": "Midsize",
-   "seats": 7,
+   "to_city": "Lexington",
+   "aircraft": "Cessna Citation CJ1",
+   "category": "Light",
+   "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
-   "price": "$5,000"
+   "price": "$1,500"
   }
  ]
 }
