@@ -1,22 +1,8 @@
 {
- "updated": "2026-09-21T05:00Z",
+ "updated": "2026-09-21T12:53Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-205654",
-   "date": "Sep 21",
-   "sort": "2026-09-21T00:00:00+00:00",
-   "from": "HPN",
-   "to": "YYZ",
-   "from_city": "White Plains",
-   "to_city": "Toronto",
-   "aircraft": "Cessna Citation Ultra",
-   "category": "",
-   "seats": 6,
-   "operator": "Chartright Air, Inc",
-   "price": "CA$7,500"
-  },
   {
    "id": "empty-leg-205655",
    "date": "Sep 22",
@@ -88,6 +74,20 @@
    "price": "$20,435"
   },
   {
+   "id": "empty-leg-205871",
+   "date": "Sep 27",
+   "sort": "2026-09-27T00:00:00+00:00",
+   "from": "RST",
+   "to": "YYZ",
+   "from_city": "Rochester",
+   "to_city": "Toronto",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$7,500"
+  },
+  {
    "id": "empty-leg-205747",
    "date": "Sep 27",
    "sort": "2026-09-27T00:00:00+00:00",
@@ -100,6 +100,20 @@
    "seats": 6,
    "operator": "Silverhawk Aviation, Inc",
    "price": "$3,500"
+  },
+  {
+   "id": "empty-leg-205872",
+   "date": "Sep 30",
+   "sort": "2026-09-30T00:00:00+00:00",
+   "from": "YYZ",
+   "to": "RST",
+   "from_city": "Toronto",
+   "to_city": "Rochester",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$11,900"
   },
   {
    "id": "empty-leg-205657",
@@ -156,20 +170,6 @@
    "seats": 7,
    "operator": "",
    "price": "$17,500"
-  },
-  {
-   "id": "empty-leg-205749",
-   "date": "Oct 15",
-   "sort": "2026-10-15T00:00:00+00:00",
-   "from": "LXN",
-   "to": "LNK",
-   "from_city": "Lexington",
-   "to_city": "Lincoln",
-   "aircraft": "Cessna Citation CJ1",
-   "category": "Light",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$1,500"
   }
  ]
 }
