@@ -1,8 +1,64 @@
 {
- "updated": "2026-09-23T04:48Z",
+ "updated": "2026-09-23T11:41Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-206358",
+   "date": "Sep 24",
+   "sort": "2026-09-24T00:00:00+00:00",
+   "from": "OMA",
+   "to": "SJC",
+   "from_city": "Omaha",
+   "to_city": "San Jose",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Magellan Jets",
+   "price": "$24,851"
+  },
+  {
+   "id": "empty-leg-206357",
+   "date": "Sep 24",
+   "sort": "2026-09-24T00:00:00+00:00",
+   "from": "HSH",
+   "to": "MFR",
+   "from_city": "Las Vegas",
+   "to_city": "Medford",
+   "aircraft": "Beechcraft Premier 1A",
+   "category": "Light",
+   "seats": 6,
+   "operator": "Magellan Jets",
+   "price": "$4,880"
+  },
+  {
+   "id": "empty-leg-206356",
+   "date": "Sep 24",
+   "sort": "2026-09-24T00:00:00+00:00",
+   "from": "SUN",
+   "to": "HSH",
+   "from_city": "Hailey",
+   "to_city": "Las Vegas",
+   "aircraft": "Beechcraft Premier 1A",
+   "category": "Light",
+   "seats": 6,
+   "operator": "Magellan Jets",
+   "price": "$4,880"
+  },
+  {
+   "id": "empty-leg-206355",
+   "date": "Sep 24",
+   "sort": "2026-09-24T00:00:00+00:00",
+   "from": "OUN",
+   "to": "DFW",
+   "from_city": "Norman",
+   "to_city": "Grapevine",
+   "aircraft": "Cessna Citation Excel",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Magellan Jets",
+   "price": "$4,270"
+  },
   {
    "id": "empty-leg-206295",
    "date": "Sep 24",
@@ -46,6 +102,20 @@
    "price": "$3,000"
   },
   {
+   "id": "empty-leg-206392",
+   "date": "Sep 27",
+   "sort": "2026-09-27T00:00:00+00:00",
+   "from": "KTIF",
+   "to": "BRD",
+   "from_city": "Thedford",
+   "to_city": "Brainerd",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$3,500"
+  },
+  {
    "id": "empty-leg-206287",
    "date": "Sep 27",
    "sort": "2026-09-27T01:45:00+00:00",
@@ -58,6 +128,20 @@
    "seats": 6,
    "operator": "FLYZAR",
    "price": "$3,000"
+  },
+  {
+   "id": "empty-leg-206405",
+   "date": "Sep 30",
+   "sort": "2026-09-30T00:00:00+00:00",
+   "from": "YYZ",
+   "to": "DFW",
+   "from_city": "Toronto",
+   "to_city": "Grapevine",
+   "aircraft": "Challenger 300",
+   "category": "Super Midsize",
+   "seats": 8,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$27,600"
   },
   {
    "id": "empty-leg-206275",
@@ -86,90 +170,6 @@
    "seats": 6,
    "operator": "FLYZAR",
    "price": "$3,000"
-  },
-  {
-   "id": "empty-leg-206288",
-   "date": "Oct 02",
-   "sort": "2026-10-02T20:33:00+00:00",
-   "from": "ROS",
-   "to": "SADF",
-   "from_city": "Rosario",
-   "to_city": "San Fernando",
-   "aircraft": "Learjet 40XR",
-   "category": "Light",
-   "seats": 6,
-   "operator": "FLYZAR",
-   "price": "$3,000"
-  },
-  {
-   "id": "empty-leg-206276",
-   "date": "Oct 04",
-   "sort": "2026-10-04T00:00:00+00:00",
-   "from": "LNK",
-   "to": "ASE",
-   "from_city": "Lincoln",
-   "to_city": "Aspen",
-   "aircraft": "Cessna Citation Ultra",
-   "category": "",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$3,500"
-  },
-  {
-   "id": "empty-leg-206290",
-   "date": "Oct 06",
-   "sort": "2026-10-06T10:32:00+00:00",
-   "from": "SADF",
-   "to": "ROS",
-   "from_city": "San Fernando",
-   "to_city": "Rosario",
-   "aircraft": "Learjet 40XR",
-   "category": "Light",
-   "seats": 6,
-   "operator": "FLYZAR",
-   "price": "$3,000"
-  },
-  {
-   "id": "empty-leg-206291",
-   "date": "Oct 07",
-   "sort": "2026-10-07T19:45:00+00:00",
-   "from": "ROS",
-   "to": "SADF",
-   "from_city": "Rosario",
-   "to_city": "San Fernando",
-   "aircraft": "Learjet 40XR",
-   "category": "Light",
-   "seats": 6,
-   "operator": "FLYZAR",
-   "price": "$3,000"
-  },
-  {
-   "id": "empty-leg-206277",
-   "date": "Oct 10",
-   "sort": "2026-10-10T00:00:00+00:00",
-   "from": "LNK",
-   "to": "IML",
-   "from_city": "Lincoln",
-   "to_city": "Imperial",
-   "aircraft": "Cessna Citation CJ1",
-   "category": "Light",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$1,500"
-  },
-  {
-   "id": "empty-leg-206278",
-   "date": "Oct 11",
-   "sort": "2026-10-11T00:00:00+00:00",
-   "from": "IML",
-   "to": "LNK",
-   "from_city": "Imperial",
-   "to_city": "Lincoln",
-   "aircraft": "Cessna Citation CJ1",
-   "category": "Light",
-   "seats": 6,
-   "operator": "Silverhawk Aviation, Inc",
-   "price": "$1,500"
   }
  ]
 }
