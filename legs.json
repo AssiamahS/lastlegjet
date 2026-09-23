@@ -1,22 +1,8 @@
 {
- "updated": "2026-09-22T21:22Z",
+ "updated": "2026-09-23T04:48Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-206191",
-   "date": "Sep 22",
-   "sort": "2026-09-22T00:00:00+00:00",
-   "from": "CTG",
-   "to": "FXE",
-   "from_city": "Cartagena",
-   "to_city": "Fort Lauderdale",
-   "aircraft": "Beechjet 400A",
-   "category": "Light",
-   "seats": 6,
-   "operator": "Atlantic Air Charter",
-   "price": "$8,500"
-  },
   {
    "id": "empty-leg-206295",
    "date": "Sep 24",
@@ -165,6 +151,20 @@
    "to": "IML",
    "from_city": "Lincoln",
    "to_city": "Imperial",
+   "aircraft": "Cessna Citation CJ1",
+   "category": "Light",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$1,500"
+  },
+  {
+   "id": "empty-leg-206278",
+   "date": "Oct 11",
+   "sort": "2026-10-11T00:00:00+00:00",
+   "from": "IML",
+   "to": "LNK",
+   "from_city": "Imperial",
+   "to_city": "Lincoln",
    "aircraft": "Cessna Citation CJ1",
    "category": "Light",
    "seats": 6,
