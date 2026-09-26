@@ -1,22 +1,8 @@
 {
- "updated": "2026-09-25T21:37Z",
+ "updated": "2026-09-26T05:03Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-206468",
-   "date": "Sep 25",
-   "sort": "2026-09-25T00:00:00+00:00",
-   "from": "TYS",
-   "to": "MSY",
-   "from_city": "Knoxville",
-   "to_city": "New Orleans",
-   "aircraft": "Learjet 60",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "International Jet Aviation Services, Inc",
-   "price": "$12,840"
-  },
   {
    "id": "empty-leg-206392",
    "date": "Sep 27",
@@ -170,6 +156,20 @@
    "seats": 6,
    "operator": "Sunwest Aviation FBO",
    "price": "CA$6,800"
+  },
+  {
+   "id": "empty-leg-206504",
+   "date": "Oct 18",
+   "sort": "2026-10-18T00:00:00+00:00",
+   "from": "OMA",
+   "to": "SGF",
+   "from_city": "Omaha",
+   "to_city": "Springfield",
+   "aircraft": "Cessna Citation V",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$1,500"
   }
  ]
 }
