@@ -1,22 +1,8 @@
 {
- "updated": "2026-09-27T21:23Z",
+ "updated": "2026-09-28T05:28Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-206902",
-   "date": "Sep 27",
-   "sort": "2026-09-27T00:00:00+00:00",
-   "from": "ECP",
-   "to": "APF",
-   "from_city": "Panama City",
-   "to_city": "Naples",
-   "aircraft": "Cessna Citation Excel",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "Magellan Jets",
-   "price": "$6,100"
-  },
   {
    "id": "empty-leg-206837",
    "date": "Oct 01",
@@ -170,6 +156,20 @@
    "seats": 8,
    "operator": "Chartright Air, Inc",
    "price": "CA$8,600"
+  },
+  {
+   "id": "empty-leg-206844",
+   "date": "Oct 07",
+   "sort": "2026-10-07T00:00:00+00:00",
+   "from": "APA",
+   "to": "JCI",
+   "from_city": "Denver",
+   "to_city": "Olathe",
+   "aircraft": "Cessna Citation Ultra",
+   "category": "",
+   "seats": 6,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$3,500"
   }
  ]
 }
