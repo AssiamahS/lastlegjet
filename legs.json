@@ -1,8 +1,22 @@
 {
- "updated": "2026-10-13T00:44Z",
+ "updated": "2026-10-13T14:16Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-210488",
+   "date": "Oct 13",
+   "sort": "2026-10-13T00:00:00+00:00",
+   "from": "MKC",
+   "to": "DFW",
+   "from_city": "Kansas City",
+   "to_city": "Grapevine",
+   "aircraft": "Learjet 60XR",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Magellan Jets",
+   "price": "$10,370"
+  },
   {
    "id": "empty-leg-210387",
    "date": "Oct 13",
@@ -156,20 +170,6 @@
    "seats": 8,
    "operator": "Let's Jett, Inc",
    "price": "\u20ac1,980"
-  },
-  {
-   "id": "empty-leg-210049",
-   "date": "Oct 13",
-   "sort": "2026-10-13T00:00:00+00:00",
-   "from": "DWH",
-   "to": "AVL",
-   "from_city": "Houston",
-   "to_city": "Asheville",
-   "aircraft": "Gulfstream IV",
-   "category": "Heavy",
-   "seats": 10,
-   "operator": "Tru Aviation",
-   "price": "\u20ac6,210"
   }
  ]
 }
