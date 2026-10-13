@@ -1,8 +1,36 @@
 {
- "updated": "2026-10-13T14:16Z",
+ "updated": "2026-10-13T22:48Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-210547",
+   "date": "Oct 13",
+   "sort": "2026-10-13T00:00:00+00:00",
+   "from": "SNA",
+   "to": "BFI",
+   "from_city": "Santa Ana",
+   "to_city": "Seattle",
+   "aircraft": "Learjet 60",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "UberJets | Virtual Hangar",
+   "price": "$12,536"
+  },
+  {
+   "id": "empty-leg-210541",
+   "date": "Oct 13",
+   "sort": "2026-10-13T00:00:00+00:00",
+   "from": "AUS",
+   "to": "LAS",
+   "from_city": "Austin",
+   "to_city": "Las Vegas",
+   "aircraft": "Challenger 850",
+   "category": "",
+   "seats": 6,
+   "operator": "UberJets | Virtual Hangar",
+   "price": "$19,030"
+  },
   {
    "id": "empty-leg-210488",
    "date": "Oct 13",
@@ -142,34 +170,6 @@
    "seats": 6,
    "operator": "Silver Air Private Jets",
    "price": "\u20ac3,825"
-  },
-  {
-   "id": "empty-leg-210175",
-   "date": "Oct 13",
-   "sort": "2026-10-13T00:00:00+00:00",
-   "from": "SJC",
-   "to": "VNY",
-   "from_city": "San Jose",
-   "to_city": "Van Nuys",
-   "aircraft": "Gulfstream V",
-   "category": "",
-   "seats": 6,
-   "operator": "Silver Air Private Jets",
-   "price": "\u20ac1,755"
-  },
-  {
-   "id": "empty-leg-210161",
-   "date": "Oct 13",
-   "sort": "2026-10-13T00:00:00+00:00",
-   "from": "VNY",
-   "to": "PSP",
-   "from_city": "Van Nuys",
-   "to_city": "Palm Springs",
-   "aircraft": "Challenger 300",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Let's Jett, Inc",
-   "price": "\u20ac1,980"
   }
  ]
 }
