@@ -1,8 +1,36 @@
 {
- "updated": "2026-10-14T11:57Z",
+ "updated": "2026-10-14T17:14Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-210713",
+   "date": "Oct 14",
+   "sort": "2026-10-14T00:00:00+00:00",
+   "from": "PHX",
+   "to": "BOI",
+   "from_city": "Phoenix",
+   "to_city": "Boise",
+   "aircraft": "Challenger 605",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "UberJets | Virtual Hangar",
+   "price": "$13,399"
+  },
+  {
+   "id": "empty-leg-210707",
+   "date": "Oct 14",
+   "sort": "2026-10-14T00:00:00+00:00",
+   "from": "TEB",
+   "to": "DJT",
+   "from_city": "New York City",
+   "to_city": "West Palm Beach",
+   "aircraft": "Challenger 300",
+   "category": "Super Midsize",
+   "seats": 8,
+   "operator": "UberJets | Virtual Hangar",
+   "price": "$18,510"
+  },
   {
    "id": "empty-leg-210503",
    "date": "Oct 14",
@@ -142,34 +170,6 @@
    "seats": 6,
    "operator": "Atlantic Air Charter",
    "price": "$6,500"
-  },
-  {
-   "id": "empty-leg-210286",
-   "date": "Oct 14",
-   "sort": "2026-10-14T00:00:00+00:00",
-   "from": "KCMA",
-   "to": "SJC",
-   "from_city": "Camarillo",
-   "to_city": "San Jose",
-   "aircraft": "Cessna Citation X",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Sun Air Jets",
-   "price": "\u20ac1,980"
-  },
-  {
-   "id": "empty-leg-210282",
-   "date": "Oct 14",
-   "sort": "2026-10-14T00:00:00+00:00",
-   "from": "KCMA",
-   "to": "ISO",
-   "from_city": "Camarillo",
-   "to_city": "Kinston",
-   "aircraft": "Cessna Citation X",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Sun Air Jets",
-   "price": "\u20ac9,810"
   }
  ]
 }
