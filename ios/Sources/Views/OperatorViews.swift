@@ -382,8 +382,8 @@ struct SendQuoteSheet: View {
     @State private var errorMessage: String?
 
     private var fitting: [Aircraft] {
-        let fit = ops.aircraft.filter { $0.seats >= request.passengers }
-        return fit.isEmpty ? ops.aircraft : fit
+        // the API rejects aircraft with fewer seats than passengers (API_CONTRACT_DEVIATIONS.md #5)
+        ops.aircraft.filter { $0.seats >= request.passengers }
     }
 
     private var priceCents: Int? {
@@ -392,7 +392,8 @@ struct SendQuoteSheet: View {
     }
 
     private var window: ClosedRange<Date> {
-        let start = max(request.departAfter, Date())
+        // departsAt must be in the future and inside the request window
+        let start = max(request.departAfter, Date().addingTimeInterval(10 * 60))
         return start...max(start, request.departBefore)
     }
 
@@ -411,7 +412,7 @@ struct SendQuoteSheet: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Aircraft").font(.caption.weight(.semibold)).foregroundStyle(Brand.muted)
                         if fitting.isEmpty {
-                            Text("Add an aircraft in Fleet first.")
+                            Text("No aircraft with \(request.passengers)+ seats. Add one in Fleet first.")
                                 .font(.subheadline)
                                 .foregroundStyle(Brand.danger)
                         }
