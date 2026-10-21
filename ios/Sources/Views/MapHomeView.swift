@@ -380,7 +380,9 @@ struct MapHomeView: View {
                 airportButton(draft.to, placeholder: "Where to?", slot: .to)
             }
             Button {
-                swap(&draft.from, &draft.to)
+                let previousFrom = draft.from
+                draft.from = draft.to
+                draft.to = previousFrom
                 frameRoute()
             } label: {
                 Image(systemName: "arrow.up.arrow.down")
