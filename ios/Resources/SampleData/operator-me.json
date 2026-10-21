@@ -1,0 +1,17 @@
+{
+ "id": "seed_operator_skyline",
+ "organisationId": "seed_org_skyline",
+ "displayName": "Skyline Charter Group",
+ "slug": "skyline-charter-group",
+ "description": "FAA Part 135 operator based in Houston with a mixed light-to-super-midsize fleet. Eight years of empty-leg operations across North America and transatlantic.",
+ "aocNumber": "SKYA135X",
+ "regulator": "FAA",
+ "yearsOperating": 8,
+ "flightsCompleted": 340,
+ "verificationStatus": "VERIFIED",
+ "verifiedAt": "2026-09-24T03:50:57.539Z",
+ "stripeAccountId": null,
+ "payoutsEnabled": true,
+ "createdAt": "2026-09-24T03:50:57.540Z",
+ "updatedAt": "2026-09-24T03:50:57.540Z"
+}

@@ -1,0 +1,29 @@
+{
+ "mode": "mock",
+ "accountId": "acct_mock_skyline",
+ "payoutsEnabled": true,
+ "pendingBookings": 1,
+ "pendingNetByCurrency": {
+  "USD": 2438000
+ },
+ "payouts": [
+  {
+   "id": "sample_payout_2",
+   "amountCents": 1748000,
+   "currency": "USD",
+   "status": "PAID",
+   "providerRef": "po_mock_2",
+   "createdAt": "2026-10-15T18:00:00.000Z",
+   "paidAt": "2026-10-17T18:00:00.000Z"
+  },
+  {
+   "id": "sample_payout_1",
+   "amountCents": 912500,
+   "currency": "USD",
+   "status": "PAID",
+   "providerRef": "po_mock_1",
+   "createdAt": "2026-10-01T18:00:00.000Z",
+   "paidAt": "2026-10-03T18:00:00.000Z"
+  }
+ ]
+}

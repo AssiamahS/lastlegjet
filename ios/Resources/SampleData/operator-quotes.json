@@ -1,0 +1,64 @@
+{
+ "items": [
+  {
+   "id": "sample_quote_teb_mia_skyline",
+   "status": "PENDING",
+   "operator": {
+    "id": "seed_operator_skyline",
+    "displayName": "Skyline Charter Group",
+    "verificationStatus": "VERIFIED"
+   },
+   "aircraft": {
+    "id": "seed_aircraft_skyline_challenger300",
+    "model": "Challenger 300",
+    "category": "SUPER_MIDSIZE",
+    "seats": 8,
+    "images": []
+   },
+   "priceCents": 2840000,
+   "currency": "USD",
+   "departsAt": "2026-10-22T20:00:00.000Z",
+   "durationMin": 170,
+   "message": "Challenger 300 positioned at Teterboro. Catering and ground transport in Miami included.",
+   "expiresAt": "2026-10-21T19:35:00.000Z",
+   "createdAt": "2026-10-21T17:35:00.000Z",
+   "tripRequest": {
+    "id": "sample_request_teb_mia",
+    "status": "QUOTED",
+    "origin": {
+     "id": "cmt3i87t9000aysfgg5hcin5l",
+     "iata": "TEB",
+     "icao": "KTEB",
+     "name": "Teterboro Airport",
+     "city": "New York",
+     "country": "US",
+     "lat": 40.8501,
+     "lng": -74.0608,
+     "timezone": "America/New_York"
+    },
+    "destination": {
+     "id": "cmt3i87t90009ysfgjydjd0rj",
+     "iata": "MIA",
+     "icao": "KMIA",
+     "name": "Miami International Airport",
+     "city": "Miami",
+     "country": "US",
+     "lat": 25.7959,
+     "lng": -80.287,
+     "timezone": "America/New_York"
+    },
+    "departAfter": "2026-10-22T18:00:00.000Z",
+    "departBefore": "2026-10-23T00:00:00.000Z",
+    "passengers": 4,
+    "category": "SUPER_MIDSIZE",
+    "maxPriceCents": 3500000,
+    "currency": "USD",
+    "notes": "Two golf bags.",
+    "createdAt": "2026-10-21T17:20:00.000Z",
+    "expiresAt": "2026-10-22T17:20:00.000Z",
+    "bookingId": null,
+    "quoteCount": 1
+   }
+  }
+ ]
+}

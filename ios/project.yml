@@ -8,7 +8,7 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.9"
-    MARKETING_VERSION: 2.1.0
+    MARKETING_VERSION: 3.0.0
     CURRENT_PROJECT_VERSION: 1
     DEVELOPMENT_TEAM: QGMAWHX827
     CODE_SIGN_STYLE: Automatic
@@ -26,7 +26,8 @@ targets:
       properties:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
-        CFBundleDisplayName: LastLeg
+        CFBundleDisplayName: AmblrX
+        NSLocationWhenInUseUsageDescription: AmblrX uses your location to suggest the nearest airport and, for operators, to share the aircraft position with travellers on trip status updates.
         CFBundleIconName: AppIcon
         UILaunchScreen: {}
         ITSAppUsesNonExemptEncryption: false

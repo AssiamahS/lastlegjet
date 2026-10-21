@@ -1,0 +1,91 @@
+[
+ {
+  "id": "sample_booking_confirmed",
+  "reference": "LLJ-AMX7Q2",
+  "flightId": "sample_flight_mia_teb_charter",
+  "customerId": "sample_user",
+  "passengers": 3,
+  "status": "CONFIRMED",
+  "holdExpiresAt": "2026-10-21T15:15:00.000Z",
+  "baseFareCents": 2650000,
+  "serviceFeeCents": 79500,
+  "taxCents": 58684,
+  "totalCents": 2788184,
+  "currency": "USD",
+  "createdAt": "2026-10-21T15:00:00.000Z",
+  "flight": {
+   "id": "sample_flight_mia_teb_charter",
+   "operatorId": "seed_operator_skyline",
+   "aircraftId": "seed_aircraft_skyline_challenger300",
+   "originId": "cmt3i87t90009ysfgjydjd0rj",
+   "destinationId": "cmt3i87t9000aysfgg5hcin5l",
+   "departsAt": "2026-10-21T18:20:00.000Z",
+   "durationMin": 165,
+   "seatsTotal": 8,
+   "seatsAvailable": 0,
+   "basePriceCents": 2650000,
+   "currency": "USD",
+   "description": "On-demand charter booked through AmblrX.",
+   "status": "SOLD_OUT",
+   "origin": {
+    "id": "cmt3i87t90009ysfgjydjd0rj",
+    "iata": "MIA",
+    "icao": "KMIA",
+    "name": "Miami International Airport",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7959,
+    "lng": -80.287,
+    "timezone": "America/New_York"
+   },
+   "destination": {
+    "id": "cmt3i87t9000aysfgg5hcin5l",
+    "iata": "TEB",
+    "icao": "KTEB",
+    "name": "Teterboro Airport",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.8501,
+    "lng": -74.0608,
+    "timezone": "America/New_York"
+   },
+   "aircraft": {
+    "id": "seed_aircraft_skyline_challenger300",
+    "model": "Challenger 300",
+    "category": "SUPER_MIDSIZE",
+    "seats": 8,
+    "images": [],
+    "amenities": [
+     "Wi-Fi Onboard",
+     "Leather Seating",
+     "Refreshment Service",
+     "Baggage Included",
+     "Pet Friendly",
+     "Ground Transport Available"
+    ],
+    "registration": "N300SK"
+   },
+   "operator": {
+    "id": "seed_operator_skyline",
+    "displayName": "Skyline Charter Group",
+    "slug": "skyline-charter-group",
+    "verificationStatus": "VERIFIED",
+    "yearsOperating": 8,
+    "flightsCompleted": 340
+   }
+  },
+  "payment": {
+   "id": "sample_pay_1",
+   "provider": "MOCK",
+   "status": "SUCCEEDED",
+   "amountCents": 2788184,
+   "currency": "USD"
+  },
+  "customer": {
+   "id": "sample_user",
+   "email": "customer@lastlegjet.dev",
+   "firstName": "Casey",
+   "lastName": "Customer"
+  }
+ }
+]

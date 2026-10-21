@@ -49,14 +49,20 @@ struct BookingConfirmationView: View {
 
                 Text(mode.isSample
                      ? "This booking was created locally in sample mode — nothing was sent to the server."
-                     : "A confirmation email is on its way. The operator will contact you with boarding details.")
+                     : "A confirmation email is on its way. Follow crew, boarding and the flight itself from the trip screen.")
                     .font(.footnote)
                     .foregroundStyle(Brand.muted)
                     .multilineTextAlignment(.center)
 
-                Button("View My Bookings") { nav.showBookings() }
-                    .buttonStyle(PrimaryButtonStyle())
-                Button("Back to Search") { nav.resetToSearch() }
+                Button {
+                    nav.push(TrackRoute(booking: booking))
+                } label: {
+                    Label("Track Your Trip", systemImage: "location.north.line")
+                }
+                .buttonStyle(PrimaryButtonStyle())
+                Button("View My Trips") { nav.showBookings() }
+                    .buttonStyle(SecondaryButtonStyle())
+                Button("Back to Home") { nav.resetToSearch() }
                     .buttonStyle(SecondaryButtonStyle())
             }
             .padding(16)

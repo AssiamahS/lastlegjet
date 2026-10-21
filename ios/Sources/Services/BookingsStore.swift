@@ -61,6 +61,22 @@ final class BookingsStore: ObservableObject {
         return booking
     }
 
+    /// Local HELD booking for a flight that only exists on this device (accepted preview quote).
+    func createLocalHold(flight: Flight, passengers: Int) -> Booking {
+        let booking = makeLocalHold(flight: flight, passengers: passengers)
+        upsertLocal(booking)
+        return booking
+    }
+
+    /// Booking returned by another endpoint (quote accept) joins the list.
+    func adopt(_ booking: Booking) {
+        if booking.id.hasPrefix("local_") {
+            upsertLocal(booking)
+        } else {
+            upsert(booking)
+        }
+    }
+
     // MARK: Payment rails
 
     /// Rails for the checkout tabs. Sample mode uses the bundled capture (all four, mock);
@@ -236,6 +252,7 @@ final class BookingsStore: ObservableObject {
     private func upsertLocal(_ booking: Booking) {
         upsert(booking)
         saveLocal()
+        PreviewWorld.shared.syncBooking(booking)
     }
 
     private func loadLocal() {

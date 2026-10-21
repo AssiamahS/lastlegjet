@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, amblrx]
   workflow_dispatch:
 
 jobs:
@@ -37,6 +37,8 @@ jobs:
     runs-on: macos-26
     timeout-minutes: 45
     needs: build
+    # branch builds (amblrx) ship through the ad hoc lane only
+    if: github.ref == 'refs/heads/main'
     defaults:
       run:
         working-directory: ios
@@ -197,6 +199,7 @@ jobs:
             -authenticationKeyIssuerID "$ASC_ISSUER_ID"
           ls -la build/adhoc
       - name: Publish install page to GitHub Pages
+        if: github.ref == 'refs/heads/main'
         working-directory: ${{ github.workspace }}
         env:
           GH_TOKEN: ${{ github.token }}
@@ -239,3 +242,51 @@ jobs:
             echo "push rejected, retrying ($attempt)"; sleep $((attempt * 5))
           done
           true  # legacy Pages rebuilds on every push
+      - name: Publish AmblrX install page (branch build)
+        # Pages serves main (legacy, repo root), so the branch build lands in its own folder
+        # web/amblrx/ on main; nothing else on main is touched (LastLeg page, web/ipa, legs.json).
+        if: github.ref == 'refs/heads/amblrx'
+        working-directory: ${{ github.workspace }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          VERSION=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' ios/build/LastLeg.xcarchive/Products/Applications/LastLeg.app/Info.plist)
+          SITE=https://assiamahs.github.io/lastlegjet/web/amblrx
+          STAGE="$RUNNER_TEMP/amblrx-site"
+          mkdir -p "$STAGE/ipa"
+          cp web/amblrx/install.html web/amblrx/icon-180.png web/amblrx/icon-512.png "$STAGE/"
+          cp ios/build/adhoc/*.ipa "$STAGE/ipa/AmblrX.ipa"
+          cat > "$STAGE/ipa/manifest.plist" <<EOF2
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict><key>items</key><array><dict>
+            <key>assets</key><array>
+              <dict><key>kind</key><string>software-package</string><key>url</key><string>${SITE}/ipa/AmblrX.ipa</string></dict>
+              <dict><key>kind</key><string>display-image</string><key>url</key><string>${SITE}/icon-180.png</string></dict>
+              <dict><key>kind</key><string>full-size-image</string><key>url</key><string>${SITE}/icon-512.png</string></dict>
+            </array>
+            <key>metadata</key><dict>
+              <key>bundle-identifier</key><string>com.assiamah.lastleg</string>
+              <key>bundle-version</key><string>${VERSION}</string>
+              <key>kind</key><string>software</string>
+              <key>title</key><string>AmblrX</string>
+            </dict>
+          </dict></array></dict></plist>
+          EOF2
+          sed -i '' "s/BUILD_NUMBER/$GITHUB_RUN_NUMBER/; s/BUILD_VERSION/$VERSION/; s/BUILD_DATE/$(date -u +%Y-%m-%d)/" "$STAGE/install.html"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # never rebase binaries: start from origin/main each attempt and re-copy our outputs
+          for attempt in 1 2 3 4; do
+            git fetch -q origin main
+            git checkout -q -f -B pages-publish origin/main
+            rm -rf web/amblrx
+            mkdir -p web/amblrx
+            cp -R "$STAGE/." web/amblrx/
+            git add -A web/amblrx
+            git commit -q -m "build: amblrx ad hoc IPA build $GITHUB_RUN_NUMBER" || exit 0
+            git push -q origin HEAD:main && break
+            echo "push rejected, retrying ($attempt)"; sleep $((attempt * 5))
+          done
+          echo "::notice::AmblrX install page: ${SITE}/install.html"

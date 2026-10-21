@@ -3,9 +3,9 @@ import SwiftUI
 // MARK: - Typography helpers
 
 extension Font {
-    static var displayTitle: Font { .system(.title, design: .serif).weight(.semibold) }
-    static var displayLarge: Font { .system(.largeTitle, design: .serif).weight(.semibold) }
-    static var displayHeadline: Font { .system(.title3, design: .serif).weight(.semibold) }
+    static var displayTitle: Font { .system(.title, design: .serif).weight(.medium) }
+    static var displayLarge: Font { .system(.largeTitle, design: .serif).weight(.medium) }
+    static var displayHeadline: Font { .system(.title3, design: .serif).weight(.medium) }
 }
 
 // MARK: - Surfaces
@@ -129,8 +129,14 @@ struct Chip: View {
                 .foregroundStyle(isSelected ? Brand.ink : Brand.cream)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 8)
-                .background(isSelected ? Brand.gold : Brand.inkCard, in: Capsule())
-                .overlay(Capsule().strokeBorder(isSelected ? Brand.gold : Brand.inkLine))
+                .background {
+                    if isSelected {
+                        Capsule().fill(Brand.bronzeGradient)
+                    } else {
+                        Capsule().fill(Brand.inkCard)
+                    }
+                }
+                .overlay(Capsule().strokeBorder(isSelected ? Brand.bronze : Brand.inkLine))
         }
         .buttonStyle(.plain)
     }
@@ -163,7 +169,8 @@ struct PrimaryButtonStyle: ButtonStyle {
             .foregroundStyle(Brand.ink)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 14)
-            .background(Brand.gold.opacity(configuration.isPressed ? 0.8 : 1), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(Brand.bronzeGradient, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .opacity(configuration.isPressed ? 0.82 : 1)
     }
 }
 
@@ -298,4 +305,103 @@ struct CopyableValue: View {
 /// Navigation route for the confirmation screen (distinct from pushing a `Booking`, which opens payment).
 struct BookingConfirmationRoute: Hashable {
     let booking: Booking
+}
+
+/// Navigation route for the live trip screen.
+struct TrackRoute: Hashable {
+    let booking: Booking
+}
+
+/// Navigation route for one trip request (quotes board).
+struct TripRequestRoute: Hashable {
+    let requestId: String
+}
+
+extension View {
+    /// Destinations every tab's stack can reach (deal detail, payment, confirmation, trip, request).
+    func appDestinations() -> some View {
+        self
+            .navigationDestination(for: Flight.self) { flight in
+                FlightDetailView(flight: flight)
+            }
+            .navigationDestination(for: Booking.self) { booking in
+                if booking.isHeld {
+                    BookingPaymentView(booking: booking)
+                } else {
+                    TripTrackView(booking: booking)
+                }
+            }
+            .navigationDestination(for: BookingConfirmationRoute.self) { route in
+                BookingConfirmationView(booking: route.booking)
+            }
+            .navigationDestination(for: TrackRoute.self) { route in
+                TripTrackView(booking: route.booking)
+            }
+            .navigationDestination(for: TripRequestRoute.self) { route in
+                TripRequestDetailView(requestId: route.requestId)
+            }
+    }
+
+    /// Bronze gradient text/icon fill.
+    func bronzeFill() -> some View {
+        foregroundStyle(Brand.bronzeGradient)
+    }
+}
+
+/// AmblrX wordmark (bundled from the brand site).
+struct BrandLogo: View {
+    var height: CGFloat = 28
+
+    var body: some View {
+        Image("AmblrXLogo")
+            .resizable()
+            .scaledToFit()
+            .frame(height: height)
+            .accessibilityLabel(Brand.appName)
+    }
+}
+
+/// Small stat tile used on the operator dashboard and trip screens.
+struct StatTile: View {
+    let title: String
+    let value: String
+    let systemImage: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Image(systemName: systemImage)
+                .font(.headline)
+                .bronzeFill()
+            Text(value)
+                .font(.system(.title2, design: .serif).weight(.semibold))
+                .foregroundStyle(Brand.cream)
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+            Text(title)
+                .font(.caption)
+                .foregroundStyle(Brand.muted)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .card(padding: 14)
+    }
+}
+
+/// "12:34" / "1h 20m" until `date`, refreshed every second.
+struct CountdownText: View {
+    let date: Date
+    var prefix: String = "Expires in "
+
+    var body: some View {
+        TimelineView(.periodic(from: .now, by: 1)) { context in
+            let remaining = date.timeIntervalSince(context.date)
+            Text(remaining > 0 ? prefix + Self.format(remaining) : "Expired")
+                .monospacedDigit()
+        }
+    }
+
+    static func format(_ seconds: TimeInterval) -> String {
+        let s = max(0, Int(seconds))
+        if s >= 3600 { return "\(s / 3600)h \((s % 3600) / 60)m" }
+        return String(format: "%02d:%02d", s / 60, s % 60)
+    }
 }

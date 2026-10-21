@@ -23,6 +23,8 @@ struct User: Codable, Hashable {
     }
 
     var isCustomer: Bool { role == "CUSTOMER" }
+    var isOperator: Bool { role == "OPERATOR_ADMIN" || role == "OPERATOR_STAFF" }
+    var isOperatorAdmin: Bool { role == "OPERATOR_ADMIN" }
 }
 
 struct AuthResponse: Decodable {

@@ -1,0 +1,140 @@
+{
+ "items": [
+  {
+   "id": "sample_request_las_ase",
+   "status": "OPEN",
+   "origin": {
+    "id": "cmt3i87t40001ysfguigbtq39",
+    "iata": "LAS",
+    "icao": "KLAS",
+    "name": "Harry Reid International Airport",
+    "city": "Las Vegas",
+    "country": "US",
+    "lat": 36.084,
+    "lng": -115.1537,
+    "timezone": "America/Los_Angeles"
+   },
+   "destination": {
+    "id": "cmt3i87t80007ysfgcesn42tr",
+    "iata": "ASE",
+    "icao": "KASE",
+    "name": "Aspen/Pitkin County Airport",
+    "city": "Aspen",
+    "country": "US",
+    "lat": 39.2232,
+    "lng": -106.8688,
+    "timezone": "America/Denver"
+   },
+   "departAfter": "2026-10-24T18:00:00.000Z",
+   "departBefore": "2026-10-25T02:00:00.000Z",
+   "passengers": 2,
+   "category": null,
+   "maxPriceCents": null,
+   "currency": "USD",
+   "notes": null,
+   "createdAt": "2026-10-21T17:52:00.000Z",
+   "expiresAt": "2026-10-22T17:52:00.000Z",
+   "bookingId": null,
+   "myQuote": null,
+   "quoteCount": 0
+  },
+  {
+   "id": "sample_request_hou_dal",
+   "status": "QUOTED",
+   "origin": {
+    "id": "cmt3i87t50002ysfg73d17pat",
+    "iata": "HOU",
+    "icao": "KHOU",
+    "name": "William P. Hobby Airport",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.6454,
+    "lng": -95.2789,
+    "timezone": "America/Chicago"
+   },
+   "destination": {
+    "id": "cmt3i87t70005ysfgmfm3ale3",
+    "iata": "DAL",
+    "icao": "KDAL",
+    "name": "Dallas Love Field",
+    "city": "Dallas",
+    "country": "US",
+    "lat": 32.8471,
+    "lng": -96.8518,
+    "timezone": "America/Chicago"
+   },
+   "departAfter": "2026-10-21T23:00:00.000Z",
+   "departBefore": "2026-10-22T03:00:00.000Z",
+   "passengers": 6,
+   "category": "MIDSIZE",
+   "maxPriceCents": 1200000,
+   "currency": "USD",
+   "notes": "Same-day return possible.",
+   "createdAt": "2026-10-21T17:45:00.000Z",
+   "expiresAt": "2026-10-21T23:00:00.000Z",
+   "bookingId": null,
+   "myQuote": null,
+   "quoteCount": 2
+  },
+  {
+   "id": "sample_request_teb_mia",
+   "status": "QUOTED",
+   "origin": {
+    "id": "cmt3i87t9000aysfgg5hcin5l",
+    "iata": "TEB",
+    "icao": "KTEB",
+    "name": "Teterboro Airport",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.8501,
+    "lng": -74.0608,
+    "timezone": "America/New_York"
+   },
+   "destination": {
+    "id": "cmt3i87t90009ysfgjydjd0rj",
+    "iata": "MIA",
+    "icao": "KMIA",
+    "name": "Miami International Airport",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7959,
+    "lng": -80.287,
+    "timezone": "America/New_York"
+   },
+   "departAfter": "2026-10-22T18:00:00.000Z",
+   "departBefore": "2026-10-23T00:00:00.000Z",
+   "passengers": 4,
+   "category": "SUPER_MIDSIZE",
+   "maxPriceCents": 3500000,
+   "currency": "USD",
+   "notes": "Two golf bags.",
+   "createdAt": "2026-10-21T17:20:00.000Z",
+   "expiresAt": "2026-10-22T17:20:00.000Z",
+   "bookingId": null,
+   "myQuote": {
+    "id": "sample_quote_teb_mia_skyline",
+    "status": "PENDING",
+    "operator": {
+     "id": "seed_operator_skyline",
+     "displayName": "Skyline Charter Group",
+     "verificationStatus": "VERIFIED"
+    },
+    "aircraft": {
+     "id": "seed_aircraft_skyline_challenger300",
+     "model": "Challenger 300",
+     "category": "SUPER_MIDSIZE",
+     "seats": 8,
+     "images": []
+    },
+    "priceCents": 2840000,
+    "currency": "USD",
+    "departsAt": "2026-10-22T20:00:00.000Z",
+    "durationMin": 170,
+    "message": "Challenger 300 positioned at Teterboro. Catering and ground transport in Miami included.",
+    "expiresAt": "2026-10-21T19:35:00.000Z",
+    "createdAt": "2026-10-21T17:35:00.000Z"
+   },
+   "quoteCount": 1
+  }
+ ]
+}

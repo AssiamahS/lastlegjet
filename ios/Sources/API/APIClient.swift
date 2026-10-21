@@ -23,6 +23,16 @@ enum APIError: LocalizedError {
         }
     }
 
+    /// Nest's default 404 for a route the server doesn't have (`Cannot GET /v1/...`), i.e. the
+    /// endpoint isn't deployed yet, as opposed to a 404 for a missing record.
+    var isRouteMissing: Bool {
+        if case .server(let code, let message) = self { return code == 404 && message.hasPrefix("Cannot ") }
+        return false
+    }
+
+    /// Unreachable, or the endpoint isn't on this server: callers fall back to bundled preview data.
+    var shouldUsePreview: Bool { isUnreachable || isRouteMissing }
+
     /// True for network-level failures (host unreachable, timeout, no connection).
     var isUnreachable: Bool {
         if case .transport = self { return true }
@@ -126,6 +136,10 @@ struct APIClient {
 
     func post<T: Decodable>(_ path: String, body: Encodable? = nil, auth: Bool = true) async throws -> T {
         try await send(method: "POST", path: path, query: [], body: body, auth: auth)
+    }
+
+    func patch<T: Decodable>(_ path: String, body: Encodable? = nil, auth: Bool = true) async throws -> T {
+        try await send(method: "PATCH", path: path, query: [], body: body, auth: auth)
     }
 
     private func send<T: Decodable>(method: String, path: String, query: [URLQueryItem],

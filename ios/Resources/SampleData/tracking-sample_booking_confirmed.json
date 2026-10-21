@@ -1,0 +1,61 @@
+{
+ "bookingId": "sample_booking_confirmed",
+ "reference": "LLJ-AMX7Q2",
+ "tripStatus": "BOARDING",
+ "events": [
+  {
+   "status": "CONFIRMED",
+   "at": "2026-10-21T15:00:00.000Z",
+   "note": null
+  },
+  {
+   "status": "CREW_ASSIGNED",
+   "at": "2026-10-21T17:10:00.000Z",
+   "note": "Capt. R. Alvarez, FO J. Kim"
+  },
+  {
+   "status": "BOARDING",
+   "at": "2026-10-21T17:56:00.000Z",
+   "note": "Signature FBO, gate 2"
+  }
+ ],
+ "position": {
+  "lat": 25.7959,
+  "lng": -80.287,
+  "updatedAt": "2026-10-21T17:56:00.000Z"
+ },
+ "etaMinutes": 185,
+ "origin": {
+  "id": "cmt3i87t90009ysfgjydjd0rj",
+  "iata": "MIA",
+  "icao": "KMIA",
+  "name": "Miami International Airport",
+  "city": "Miami",
+  "country": "US",
+  "lat": 25.7959,
+  "lng": -80.287,
+  "timezone": "America/New_York"
+ },
+ "destination": {
+  "id": "cmt3i87t9000aysfgg5hcin5l",
+  "iata": "TEB",
+  "icao": "KTEB",
+  "name": "Teterboro Airport",
+  "city": "New York",
+  "country": "US",
+  "lat": 40.8501,
+  "lng": -74.0608,
+  "timezone": "America/New_York"
+ },
+ "departsAt": "2026-10-21T18:20:00.000Z",
+ "durationMin": 165,
+ "operator": {
+  "id": "seed_operator_skyline",
+  "displayName": "Skyline Charter Group"
+ },
+ "aircraft": {
+  "model": "Challenger 300",
+  "registration": "N300SK",
+  "category": "SUPER_MIDSIZE"
+ }
+}

@@ -1,0 +1,383 @@
+[
+ {
+  "id": "seed_flight_sna_las",
+  "operatorId": "seed_operator_skyline",
+  "aircraftId": "seed_aircraft_skyline_challenger300",
+  "originId": "cmuezvcx90000v3emqvkwtfyw",
+  "destinationId": "cmuezvcxs0001v3emwxqwhvxn",
+  "departsAt": "2026-10-22T18:00:00.000Z",
+  "durationMin": 65,
+  "seatsTotal": 8,
+  "seatsAvailable": 8,
+  "basePriceCents": 506000,
+  "currency": "USD",
+  "description": "Empty leg repositioning after a weekend charter. Quick hop to Las Vegas.",
+  "status": "PUBLISHED",
+  "createdAt": "2026-10-18T18:00:00.000Z",
+  "updatedAt": "2026-10-18T18:00:00.000Z",
+  "origin": {
+   "id": "cmuezvcx90000v3emqvkwtfyw",
+   "iata": "SNA",
+   "icao": "KSNA",
+   "name": "John Wayne Airport",
+   "city": "Santa Ana",
+   "country": "US",
+   "lat": 33.6757,
+   "lng": -117.8682,
+   "timezone": "America/Los_Angeles"
+  },
+  "destination": {
+   "id": "cmuezvcxs0001v3emwxqwhvxn",
+   "iata": "LAS",
+   "icao": "KLAS",
+   "name": "Harry Reid International Airport",
+   "city": "Las Vegas",
+   "country": "US",
+   "lat": 36.084,
+   "lng": -115.1537,
+   "timezone": "America/Los_Angeles"
+  },
+  "aircraft": {
+   "id": "seed_aircraft_skyline_challenger300",
+   "model": "Challenger 300",
+   "category": "SUPER_MIDSIZE",
+   "seats": 8,
+   "images": [],
+   "amenities": [
+    "Wi-Fi Onboard",
+    "Leather Seating",
+    "Refreshment Service",
+    "Baggage Included",
+    "Pet Friendly",
+    "Ground Transport Available"
+   ]
+  },
+  "operator": {
+   "id": "seed_operator_skyline",
+   "displayName": "Skyline Charter Group",
+   "slug": "skyline-charter-group",
+   "verificationStatus": "VERIFIED",
+   "yearsOperating": 8,
+   "flightsCompleted": 340
+  },
+  "_count": {
+   "bookings": 0
+  }
+ },
+ {
+  "id": "seed_flight_mia_teb",
+  "operatorId": "seed_operator_skyline",
+  "aircraftId": "seed_aircraft_skyline_citationultra",
+  "originId": "cmuezvdhy0009v3emhqpxfum2",
+  "destinationId": "cmuezvdi0000av3emgmrkl3pe",
+  "departsAt": "2026-10-23T23:00:00.000Z",
+  "durationMin": 160,
+  "seatsTotal": 6,
+  "seatsAvailable": 6,
+  "basePriceCents": 465000,
+  "currency": "USD",
+  "description": "Miami to Teterboro empty leg. Wi-Fi, leather seating and refreshments onboard.",
+  "status": "PUBLISHED",
+  "createdAt": "2026-10-18T18:00:00.000Z",
+  "updatedAt": "2026-10-18T18:00:00.000Z",
+  "origin": {
+   "id": "cmuezvdhy0009v3emhqpxfum2",
+   "iata": "MIA",
+   "icao": "KMIA",
+   "name": "Miami International Airport",
+   "city": "Miami",
+   "country": "US",
+   "lat": 25.7959,
+   "lng": -80.287,
+   "timezone": "America/New_York"
+  },
+  "destination": {
+   "id": "cmuezvdi0000av3emgmrkl3pe",
+   "iata": "TEB",
+   "icao": "KTEB",
+   "name": "Teterboro Airport",
+   "city": "New York",
+   "country": "US",
+   "lat": 40.8501,
+   "lng": -74.0608,
+   "timezone": "America/New_York"
+  },
+  "aircraft": {
+   "id": "seed_aircraft_skyline_citationultra",
+   "model": "Citation Ultra",
+   "category": "LIGHT_JET",
+   "seats": 6,
+   "images": [],
+   "amenities": [
+    "Wi-Fi Onboard",
+    "Leather Seating",
+    "Refreshment Service",
+    "Baggage Included"
+   ]
+  },
+  "operator": {
+   "id": "seed_operator_skyline",
+   "displayName": "Skyline Charter Group",
+   "slug": "skyline-charter-group",
+   "verificationStatus": "VERIFIED",
+   "yearsOperating": 8,
+   "flightsCompleted": 340
+  },
+  "_count": {
+   "bookings": 0
+  }
+ },
+ {
+  "id": "seed_flight_hou_fra",
+  "operatorId": "seed_operator_skyline",
+  "aircraftId": "seed_aircraft_skyline_citationultra",
+  "originId": "cmuezvd420002v3emq9ifhlgn",
+  "destinationId": "cmuezvd470003v3emzu3emsbm",
+  "departsAt": "2026-10-24T19:00:00.000Z",
+  "durationMin": 600,
+  "seatsTotal": 6,
+  "seatsAvailable": 6,
+  "basePriceCents": 736000,
+  "currency": "USD",
+  "description": "Transatlantic repositioning with a tech stop. Catering included.",
+  "status": "PUBLISHED",
+  "createdAt": "2026-10-18T18:00:00.000Z",
+  "updatedAt": "2026-10-18T18:00:00.000Z",
+  "origin": {
+   "id": "cmuezvd420002v3emq9ifhlgn",
+   "iata": "HOU",
+   "icao": "KHOU",
+   "name": "William P. Hobby Airport",
+   "city": "Houston",
+   "country": "US",
+   "lat": 29.6454,
+   "lng": -95.2789,
+   "timezone": "America/Chicago"
+  },
+  "destination": {
+   "id": "cmuezvd470003v3emzu3emsbm",
+   "iata": "FRA",
+   "icao": "EDDF",
+   "name": "Frankfurt Airport",
+   "city": "Frankfurt",
+   "country": "DE",
+   "lat": 50.0379,
+   "lng": 8.5622,
+   "timezone": "Europe/Berlin"
+  },
+  "aircraft": {
+   "id": "seed_aircraft_skyline_citationultra",
+   "model": "Citation Ultra",
+   "category": "LIGHT_JET",
+   "seats": 6,
+   "images": [],
+   "amenities": [
+    "Wi-Fi Onboard",
+    "Leather Seating",
+    "Refreshment Service",
+    "Baggage Included"
+   ]
+  },
+  "operator": {
+   "id": "seed_operator_skyline",
+   "displayName": "Skyline Charter Group",
+   "slug": "skyline-charter-group",
+   "verificationStatus": "VERIFIED",
+   "yearsOperating": 8,
+   "flightsCompleted": 340
+  },
+  "_count": {
+   "bookings": 0
+  }
+ },
+ {
+  "id": "seed_flight_mem_dal",
+  "operatorId": "seed_operator_skyline",
+  "aircraftId": "seed_aircraft_skyline_citationultra",
+  "originId": "cmuezvd4c0004v3emuq89m6s1",
+  "destinationId": "cmuezvday0005v3ema0czw8ie",
+  "departsAt": "2026-10-26T00:00:00.000Z",
+  "durationMin": 80,
+  "seatsTotal": 6,
+  "seatsAvailable": 6,
+  "basePriceCents": 552000,
+  "currency": "USD",
+  "description": "Short hop to Dallas Love Field after a corporate shuttle.",
+  "status": "PUBLISHED",
+  "createdAt": "2026-10-18T18:00:00.000Z",
+  "updatedAt": "2026-10-18T18:00:00.000Z",
+  "origin": {
+   "id": "cmuezvd4c0004v3emuq89m6s1",
+   "iata": "MEM",
+   "icao": "KMEM",
+   "name": "Memphis International Airport",
+   "city": "Memphis",
+   "country": "US",
+   "lat": 35.0424,
+   "lng": -89.9767,
+   "timezone": "America/Chicago"
+  },
+  "destination": {
+   "id": "cmuezvday0005v3ema0czw8ie",
+   "iata": "DAL",
+   "icao": "KDAL",
+   "name": "Dallas Love Field",
+   "city": "Dallas",
+   "country": "US",
+   "lat": 32.8471,
+   "lng": -96.8518,
+   "timezone": "America/Chicago"
+  },
+  "aircraft": {
+   "id": "seed_aircraft_skyline_citationultra",
+   "model": "Citation Ultra",
+   "category": "LIGHT_JET",
+   "seats": 6,
+   "images": [],
+   "amenities": [
+    "Wi-Fi Onboard",
+    "Leather Seating",
+    "Refreshment Service",
+    "Baggage Included"
+   ]
+  },
+  "operator": {
+   "id": "seed_operator_skyline",
+   "displayName": "Skyline Charter Group",
+   "slug": "skyline-charter-group",
+   "verificationStatus": "VERIFIED",
+   "yearsOperating": 8,
+   "flightsCompleted": 340
+  },
+  "_count": {
+   "bookings": 0
+  }
+ },
+ {
+  "id": "seed_flight_pit_hou",
+  "operatorId": "seed_operator_skyline",
+  "aircraftId": "seed_aircraft_skyline_citationultra",
+  "originId": "cmuezvdbb0006v3empfbm1dp6",
+  "destinationId": "cmuezvd420002v3emq9ifhlgn",
+  "departsAt": "2026-10-26T20:00:00.000Z",
+  "durationMin": 165,
+  "seatsTotal": 6,
+  "seatsAvailable": 6,
+  "basePriceCents": 632500,
+  "currency": "USD",
+  "description": "Returning to base in Houston. Flexible departure within a 2-hour window.",
+  "status": "PUBLISHED",
+  "createdAt": "2026-10-18T18:00:00.000Z",
+  "updatedAt": "2026-10-18T18:00:00.000Z",
+  "origin": {
+   "id": "cmuezvdbb0006v3empfbm1dp6",
+   "iata": "PIT",
+   "icao": "KPIT",
+   "name": "Pittsburgh International Airport",
+   "city": "Pittsburgh",
+   "country": "US",
+   "lat": 40.4915,
+   "lng": -80.2329,
+   "timezone": "America/New_York"
+  },
+  "destination": {
+   "id": "cmuezvd420002v3emq9ifhlgn",
+   "iata": "HOU",
+   "icao": "KHOU",
+   "name": "William P. Hobby Airport",
+   "city": "Houston",
+   "country": "US",
+   "lat": 29.6454,
+   "lng": -95.2789,
+   "timezone": "America/Chicago"
+  },
+  "aircraft": {
+   "id": "seed_aircraft_skyline_citationultra",
+   "model": "Citation Ultra",
+   "category": "LIGHT_JET",
+   "seats": 6,
+   "images": [],
+   "amenities": [
+    "Wi-Fi Onboard",
+    "Leather Seating",
+    "Refreshment Service",
+    "Baggage Included"
+   ]
+  },
+  "operator": {
+   "id": "seed_operator_skyline",
+   "displayName": "Skyline Charter Group",
+   "slug": "skyline-charter-group",
+   "verificationStatus": "VERIFIED",
+   "yearsOperating": 8,
+   "flightsCompleted": 340
+  },
+  "_count": {
+   "bookings": 0
+  }
+ },
+ {
+  "id": "seed_flight_bna_ase",
+  "operatorId": "seed_operator_skyline",
+  "aircraftId": "seed_aircraft_skyline_learjet60",
+  "originId": "cmuezvdhu0008v3emajong95x",
+  "destinationId": "cmuezvdho0007v3embyp7b801",
+  "departsAt": "2026-10-28T01:00:00.000Z",
+  "durationMin": 180,
+  "seatsTotal": 8,
+  "seatsAvailable": 8,
+  "basePriceCents": 2001000,
+  "currency": "USD",
+  "description": "Mountain arrival into Aspen. Ski equipment welcome.",
+  "status": "PUBLISHED",
+  "createdAt": "2026-10-18T18:00:00.000Z",
+  "updatedAt": "2026-10-18T18:00:00.000Z",
+  "origin": {
+   "id": "cmuezvdhu0008v3emajong95x",
+   "iata": "BNA",
+   "icao": "KBNA",
+   "name": "Nashville International Airport",
+   "city": "Nashville",
+   "country": "US",
+   "lat": 36.1245,
+   "lng": -86.6782,
+   "timezone": "America/Chicago"
+  },
+  "destination": {
+   "id": "cmuezvdho0007v3embyp7b801",
+   "iata": "ASE",
+   "icao": "KASE",
+   "name": "Aspen/Pitkin County Airport",
+   "city": "Aspen",
+   "country": "US",
+   "lat": 39.2232,
+   "lng": -106.8688,
+   "timezone": "America/Denver"
+  },
+  "aircraft": {
+   "id": "seed_aircraft_skyline_learjet60",
+   "model": "Learjet 60",
+   "category": "MIDSIZE",
+   "seats": 8,
+   "images": [],
+   "amenities": [
+    "Wi-Fi Onboard",
+    "Leather Seating",
+    "Refreshment Service",
+    "Baggage Included",
+    "Ground Transport Available"
+   ]
+  },
+  "operator": {
+   "id": "seed_operator_skyline",
+   "displayName": "Skyline Charter Group",
+   "slug": "skyline-charter-group",
+   "verificationStatus": "VERIFIED",
+   "yearsOperating": 8,
+   "flightsCompleted": 340
+  },
+  "_count": {
+   "bookings": 0
+  }
+ }
+]

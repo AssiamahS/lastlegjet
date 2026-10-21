@@ -42,6 +42,8 @@ struct Booking: Codable, Hashable, Identifiable {
     let createdAt: Date
     let flight: Flight?
     let payment: Payment?
+    /// Present on `/operator/bookings` only.
+    var customer: BookingCustomer? = nil
 
     var bookingStatus: BookingStatus? { BookingStatus(rawValue: status) }
     var statusLabel: String { bookingStatus?.label ?? status.capitalized }
@@ -58,7 +60,7 @@ struct Booking: Codable, Hashable, Identifiable {
                 passengers: passengers, status: newStatus.rawValue, holdExpiresAt: holdExpiresAt,
                 baseFareCents: baseFareCents, serviceFeeCents: serviceFeeCents, taxCents: taxCents,
                 totalCents: totalCents, currency: currency, createdAt: createdAt, flight: flight,
-                payment: newPayment ?? payment)
+                payment: newPayment ?? payment, customer: customer)
     }
 }
 

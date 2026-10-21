@@ -1,0 +1,56 @@
+[
+ {
+  "id": "seed_aircraft_skyline_challenger300",
+  "operatorId": "seed_operator_skyline",
+  "registration": "N300SK",
+  "model": "Challenger 300",
+  "category": "SUPER_MIDSIZE",
+  "seats": 8,
+  "images": [],
+  "amenities": [
+   "Wi-Fi Onboard",
+   "Leather Seating",
+   "Refreshment Service",
+   "Baggage Included",
+   "Pet Friendly",
+   "Ground Transport Available"
+  ],
+  "createdAt": "2026-09-24T03:50:57.618Z",
+  "updatedAt": "2026-09-24T03:50:57.618Z"
+ },
+ {
+  "id": "seed_aircraft_skyline_citationultra",
+  "operatorId": "seed_operator_skyline",
+  "registration": "N560SK",
+  "model": "Citation Ultra",
+  "category": "LIGHT_JET",
+  "seats": 6,
+  "images": [],
+  "amenities": [
+   "Wi-Fi Onboard",
+   "Leather Seating",
+   "Refreshment Service",
+   "Baggage Included"
+  ],
+  "createdAt": "2026-09-24T03:50:57.622Z",
+  "updatedAt": "2026-09-24T03:50:57.622Z"
+ },
+ {
+  "id": "seed_aircraft_skyline_learjet60",
+  "operatorId": "seed_operator_skyline",
+  "registration": "N60SKY",
+  "model": "Learjet 60",
+  "category": "MIDSIZE",
+  "seats": 8,
+  "images": [],
+  "amenities": [
+   "Wi-Fi Onboard",
+   "Leather Seating",
+   "Refreshment Service",
+   "Baggage Included",
+   "Ground Transport Available"
+  ],
+  "createdAt": "2026-09-24T03:50:57.625Z",
+  "updatedAt": "2026-09-24T03:50:57.625Z"
+ }
+]

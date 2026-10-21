@@ -16,9 +16,12 @@ struct AccountView: View {
                         .padding(.top, 8)
                     if let user = session.user {
                         signedInCard(user)
-                        SecuritySection(user: user)
                     } else {
                         AuthFormView(onSuccess: {})
+                    }
+                    RoleSwitcherCard()
+                    if let user = session.user {
+                        SecuritySection(user: user)
                     }
                     serverSection
                     footer
@@ -51,11 +54,14 @@ struct AccountView: View {
                 Pill(text: user.roleLabel, systemImage: "person.text.rectangle")
             }
             if !user.isCustomer {
-                Text("Bookings require a customer account. Operator and admin accounts can browse only.")
+                Text("Requests and bookings need a traveller account. Operator accounts run the Operator tab.")
                     .font(.caption)
                     .foregroundStyle(Brand.muted)
             }
-            Button("Sign Out") { session.signOut() }
+            Button("Sign Out") {
+                session.signOut()
+                PushRegistrar.shared.signedOut()
+            }
                 .buttonStyle(SecondaryButtonStyle())
         }
         .card()
@@ -81,7 +87,7 @@ struct AccountView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text("Use sample data")
                             .foregroundStyle(Brand.cream)
-                        Text("Bundled flights, bookings stay on this device")
+                        Text("Bundled flights, requests and trips stay on this device")
                             .font(.caption)
                             .foregroundStyle(Brand.muted)
                     }
@@ -137,10 +143,8 @@ struct AccountView: View {
 
     private var footer: some View {
         VStack(spacing: 4) {
-            Text(Brand.appName)
-                .font(.system(.footnote, design: .serif).weight(.semibold))
-                .foregroundStyle(Brand.gold)
-            Text("Empty-leg private jet marketplace · v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")")
+            BrandLogo(height: 34)
+            Text("Private jets on demand · v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))")
                 .font(.caption2)
                 .foregroundStyle(Brand.muted)
         }
@@ -403,5 +407,125 @@ struct SecuritySection: View {
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+}
+
+/// Demo role switcher: signs in with the seeded traveller / operator accounts (live) or flips the
+/// Operator tab on with preview data (sample mode).
+struct RoleSwitcherCard: View {
+    @EnvironmentObject private var session: SessionStore
+    @EnvironmentObject private var mode: AppMode
+    @EnvironmentObject private var nav: AppNavigation
+    @EnvironmentObject private var trips: TripsStore
+    @EnvironmentObject private var ops: OperatorStore
+    @AppStorage(RoleMode.demoOperatorKey) private var demoOperator = false
+    @State private var switching: String?
+    @State private var notice: String?
+
+    static let travellerEmail = "customer@lastlegjet.dev"
+    static let operatorEmail = "operator@skyline.dev"
+    static let demoPassword = "Password123!"
+
+    private var isOperatorView: Bool { session.user?.isOperator == true || demoOperator }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            SectionTitle("Switch role")
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(spacing: 10) {
+                    roleButton("Traveller", systemImage: "person.fill", selected: !isOperatorView) {
+                        await switchToTraveller()
+                    }
+                    roleButton("Operator", systemImage: "steeringwheel", selected: isOperatorView) {
+                        await switchToOperator()
+                    }
+                }
+                Text(mode.isSample
+                     ? "Sample mode: both roles run on this phone, so you can quote your own request from the Operator tab."
+                     : "Signs in with the demo accounts \(Self.travellerEmail) / \(Self.operatorEmail).")
+                    .font(.caption)
+                    .foregroundStyle(Brand.muted)
+                Toggle(isOn: $demoOperator) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Show Operator tab").foregroundStyle(Brand.cream)
+                        Text("Always on for operator accounts").font(.caption).foregroundStyle(Brand.muted)
+                    }
+                }
+                .tint(Brand.gold)
+                Button("Reset preview data") {
+                    PreviewWorld.shared.reset()
+                    notice = "Preview requests, quotes and trips reset."
+                    Task {
+                        await trips.load(signedIn: session.isSignedIn)
+                        await ops.load(user: session.user)
+                    }
+                }
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(Brand.gold)
+                if let notice = notice {
+                    Text(notice).font(.caption).foregroundStyle(Brand.success)
+                }
+                if let error = session.errorMessage, switching == nil, notice == nil {
+                    Text(error).font(.caption).foregroundStyle(Brand.danger)
+                }
+            }
+            .card()
+        }
+    }
+
+    private func roleButton(_ title: String, systemImage: String, selected: Bool,
+                            action: @escaping () async -> Void) -> some View {
+        Button {
+            Task {
+                switching = title
+                notice = nil
+                await action()
+                switching = nil
+            }
+        } label: {
+            HStack(spacing: 6) {
+                if switching == title {
+                    ProgressView().tint(selected ? Brand.ink : Brand.cream)
+                } else {
+                    Image(systemName: systemImage)
+                }
+                Text(title)
+            }
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(selected ? Brand.ink : Brand.cream)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+            .background {
+                if selected {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Brand.bronzeGradient)
+                } else {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Brand.ink)
+                }
+            }
+            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(selected ? Brand.bronze : Brand.inkLine))
+        }
+        .buttonStyle(.plain)
+        .disabled(switching != nil)
+    }
+
+    private func switchToTraveller() async {
+        demoOperator = false
+        if !mode.isSample, session.user?.isCustomer != true {
+            session.signOut()
+            _ = await session.signIn(email: Self.travellerEmail, password: Self.demoPassword)
+        }
+        nav.tab = .home
+    }
+
+    private func switchToOperator() async {
+        if mode.isSample {
+            demoOperator = true
+        } else if session.user?.isOperator != true {
+            session.signOut()
+            if await session.signIn(email: Self.operatorEmail, password: Self.demoPassword) != .signedIn {
+                demoOperator = true
+            }
+        }
+        nav.tab = .ops
     }
 }

@@ -22,17 +22,9 @@ struct SearchView: View {
             .screenBackground()
             .scrollDismissesKeyboard(.interactively)
             .refreshable { await flights.search(query) }
-            .navigationTitle("Search")
+            .navigationTitle("Deals")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: Flight.self) { flight in
-                FlightDetailView(flight: flight)
-            }
-            .navigationDestination(for: Booking.self) { booking in
-                BookingPaymentView(booking: booking)
-            }
-            .navigationDestination(for: BookingConfirmationRoute.self) { route in
-                BookingConfirmationView(booking: route.booking)
-            }
+            .appDestinations()
         }
         .task {
             guard !hasLoaded else { return }
@@ -49,10 +41,10 @@ struct SearchView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(Brand.appName)
+            Text("Empty-leg deals")
                 .font(.displayLarge)
                 .foregroundStyle(Brand.cream)
-            Text("Private jet empty legs at a fraction of charter price.")
+            Text("Aircraft already flying your way, at a fraction of charter price.")
                 .font(.subheadline)
                 .foregroundStyle(Brand.muted)
             if flights.usingSampleData || mode.showsSampleBanner {
@@ -101,7 +93,7 @@ struct SearchView: View {
             Button {
                 Task { await flights.search(query) }
             } label: {
-                Label("Search Flights", systemImage: "magnifyingglass")
+                Label("Search Deals", systemImage: "magnifyingglass")
             }
             .buttonStyle(PrimaryButtonStyle())
         }
@@ -111,7 +103,7 @@ struct SearchView: View {
     @ViewBuilder
     private var results: some View {
         HStack {
-            SectionTitle("Available flights")
+            SectionTitle("Available legs")
             if flights.isLoading {
                 ProgressView().tint(Brand.gold)
             } else {
