@@ -1,8 +1,50 @@
 {
- "updated": "2026-11-01T13:29Z",
+ "updated": "2026-11-01T22:05Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-214172",
+   "date": "Nov 01",
+   "sort": "2026-11-01T00:00:00+00:00",
+   "from": "SLC",
+   "to": "OPF",
+   "from_city": "Salt Lake City",
+   "to_city": "Miami",
+   "aircraft": "Gulfstream G450",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "Flightpath Aviation Services",
+   "price": "\u20ac15,345"
+  },
+  {
+   "id": "empty-leg-214171",
+   "date": "Nov 01",
+   "sort": "2026-11-01T00:00:00+00:00",
+   "from": "TUS",
+   "to": "DPA",
+   "from_city": "Tucson",
+   "to_city": "Chicago",
+   "aircraft": "Falcon 2000EX EASy",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "Flightpath Aviation Services",
+   "price": "$26,450"
+  },
+  {
+   "id": "empty-leg-214141",
+   "date": "Nov 01",
+   "sort": "2026-11-01T00:00:00+00:00",
+   "from": "LXT",
+   "to": "PTK",
+   "from_city": "Lees Summit",
+   "to_city": "Pontiac",
+   "aircraft": "Learjet 60XR",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Magellan Jets",
+   "price": "$10,625"
+  },
   {
    "id": "empty-leg-214030",
    "date": "Nov 01",
@@ -128,48 +170,6 @@
    "seats": 8,
    "operator": "Tru Aviation",
    "price": "\u20ac1,800"
-  },
-  {
-   "id": "empty-leg-212949",
-   "date": "Nov 01",
-   "sort": "2026-11-01T00:00:00+00:00",
-   "from": "KJWN",
-   "to": "DVK",
-   "from_city": "Nashville",
-   "to_city": "Danville",
-   "aircraft": "Pilatus PC-12/47 NG",
-   "category": "Turboprop",
-   "seats": 6,
-   "operator": "Flight Level Services LLC",
-   "price": "\u20ac7,200"
-  },
-  {
-   "id": "empty-leg-212931",
-   "date": "Nov 01",
-   "sort": "2026-11-01T00:00:00+00:00",
-   "from": "SXM",
-   "to": "CLD",
-   "from_city": "Saint Martin",
-   "to_city": "Carlsbad",
-   "aircraft": "Falcon 900B",
-   "category": "Heavy",
-   "seats": 10,
-   "operator": "Portland Jets",
-   "price": "\u20ac25,785"
-  },
-  {
-   "id": "empty-leg-212930",
-   "date": "Nov 01",
-   "sort": "2026-11-01T00:00:00+00:00",
-   "from": "ISP",
-   "to": "IAD",
-   "from_city": "New York City",
-   "to_city": "Washington, D. C.",
-   "aircraft": "Falcon 900B",
-   "category": "Heavy",
-   "seats": 10,
-   "operator": "Portland Jets",
-   "price": "\u20ac2,385"
   }
  ]
 }
