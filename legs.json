@@ -1,8 +1,36 @@
 {
- "updated": "2026-11-03T14:21Z",
+ "updated": "2026-11-03T23:25Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-214663",
+   "date": "Nov 03",
+   "sort": "2026-11-03T00:00:00+00:00",
+   "from": "DJT",
+   "to": "NAS",
+   "from_city": "West Palm Beach",
+   "to_city": "Nassau",
+   "aircraft": "Challenger 605",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "UberJets | Virtual Hangar",
+   "price": "$11,311"
+  },
+  {
+   "id": "empty-leg-214655",
+   "date": "Nov 03",
+   "sort": "2026-11-03T00:00:00+00:00",
+   "from": "FXE",
+   "to": "YYZ",
+   "from_city": "Fort Lauderdale",
+   "to_city": "Toronto",
+   "aircraft": "Challenger 605",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "UberJets | Virtual Hangar",
+   "price": "$17,900"
+  },
   {
    "id": "empty-leg-214531",
    "date": "Nov 03",
@@ -142,34 +170,6 @@
    "seats": 10,
    "operator": "Chicago Jet Group",
    "price": "\u20ac7,470"
-  },
-  {
-   "id": "empty-leg-212953",
-   "date": "Nov 03",
-   "sort": "2026-11-03T00:00:00+00:00",
-   "from": "DVK",
-   "to": "CPS",
-   "from_city": "Danville",
-   "to_city": "Cahokia",
-   "aircraft": "Cessna Citation M2",
-   "category": "Light",
-   "seats": 6,
-   "operator": "Flight Level Services LLC",
-   "price": "\u20ac6,750"
-  },
-  {
-   "id": "empty-leg-212951",
-   "date": "Nov 03",
-   "sort": "2026-11-03T00:00:00+00:00",
-   "from": "KDLZ",
-   "to": "DVK",
-   "from_city": "Delaware",
-   "to_city": "Danville",
-   "aircraft": "Pilatus PC-12/47 NG",
-   "category": "Turboprop",
-   "seats": 6,
-   "operator": "Flight Level Services LLC",
-   "price": "\u20ac6,795"
   }
  ]
 }
