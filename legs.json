@@ -1,8 +1,36 @@
 {
- "updated": "2026-11-04T06:29Z",
+ "updated": "2026-11-04T19:48Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
+  {
+   "id": "empty-leg-214791",
+   "date": "Nov 04",
+   "sort": "2026-11-04T00:00:00+00:00",
+   "from": "VNY",
+   "to": "FLL",
+   "from_city": "Van Nuys",
+   "to_city": "Fort Lauderdale",
+   "aircraft": "Gulfstream IV-SP",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "UberJets | Virtual Hangar",
+   "price": "$28,955"
+  },
+  {
+   "id": "empty-leg-214730",
+   "date": "Nov 04",
+   "sort": "2026-11-04T00:00:00+00:00",
+   "from": "PNE",
+   "to": "SGH",
+   "from_city": "Philadelphia",
+   "to_city": "Springfield",
+   "aircraft": "Learjet 60XR",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Magellan Jets",
+   "price": "$125"
+  },
   {
    "id": "empty-leg-214651",
    "date": "Nov 04",
@@ -142,34 +170,6 @@
    "seats": 7,
    "operator": "NovaJet Aviation Group",
    "price": "\u20ac1,620"
-  },
-  {
-   "id": "empty-leg-213167",
-   "date": "Nov 04",
-   "sort": "2026-11-04T00:00:00+00:00",
-   "from": "MCO",
-   "to": "BNA",
-   "from_city": "Orlando",
-   "to_city": "Nashville",
-   "aircraft": "Global 5000",
-   "category": "Heavy",
-   "seats": 10,
-   "operator": "Elite Air, Inc",
-   "price": "\u20ac4,545"
-  },
-  {
-   "id": "empty-leg-213166",
-   "date": "Nov 04",
-   "sort": "2026-11-04T00:00:00+00:00",
-   "from": "BCT",
-   "to": "APA",
-   "from_city": "Boca Raton",
-   "to_city": "Denver",
-   "aircraft": "Challenger 350",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Elite Air, Inc",
-   "price": "\u20ac6,885"
   }
  ]
 }
