@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T06:17Z",
+ "updated": "2026-11-22T12:17Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
@@ -29,7 +29,7 @@
    "category": "Super Midsize",
    "seats": 8,
    "operator": "Schubach Aviation",
-   "price": "\u20ac3,150"
+   "price": "\u20ac7,065"
   },
   {
    "id": "empty-leg-214197",
@@ -43,7 +43,7 @@
    "category": "Super Midsize",
    "seats": 8,
    "operator": "Luxaviation Group Europe",
-   "price": "\u20ac1,800"
+   "price": "\u20ac4,545"
   },
   {
    "id": "empty-leg-213760",
@@ -113,7 +113,7 @@
    "category": "Heavy",
    "seats": 10,
    "operator": "Hop-A-Jet WorldWide Jet Charter",
-   "price": "\u20ac2,385"
+   "price": "\u20ac5,265"
   },
   {
    "id": "empty-leg-213657",
@@ -127,7 +127,7 @@
    "category": "Ultra Long Range",
    "seats": 12,
    "operator": "Global Jet",
-   "price": "\u20ac2,835"
+   "price": "\u20ac7,560"
   },
   {
    "id": "empty-leg-212804",
@@ -141,7 +141,7 @@
    "category": "Midsize",
    "seats": 7,
    "operator": "Hop-A-Jet WorldWide Jet Charter",
-   "price": "\u20ac4,095"
+   "price": "\u20ac7,650"
   },
   {
    "id": "empty-leg-213952",
@@ -155,7 +155,7 @@
    "category": "Midsize",
    "seats": 7,
    "operator": "DC Aviation GmbH",
-   "price": "\u20ac1,620"
+   "price": "\u20ac3,600"
   },
   {
    "id": "empty-leg-213574",
@@ -169,7 +169,7 @@
    "category": "Midsize",
    "seats": 7,
    "operator": "DC Aviation GmbH",
-   "price": "\u20ac1,620"
+   "price": "\u20ac3,600"
   }
  ]
 }
