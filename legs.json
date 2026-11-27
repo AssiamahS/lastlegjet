@@ -1,64 +1,8 @@
 {
- "updated": "2026-11-26T18:17Z",
+ "updated": "2026-11-27T00:17Z",
  "source": "Limitless Sky",
  "source_url": "https://thelimitlesssky.com/empty-legs",
  "legs": [
-  {
-   "id": "empty-leg-214201",
-   "date": "Nov 26",
-   "sort": "2026-11-26T00:00:00+00:00",
-   "from": "LBG",
-   "to": "VCE",
-   "from_city": "Paris",
-   "to_city": "Venice",
-   "aircraft": "Global 6000",
-   "category": "Ultra Long Range",
-   "seats": 12,
-   "operator": "Luxaviation Group Europe",
-   "price": "\u20ac9,630"
-  },
-  {
-   "id": "empty-leg-215064",
-   "date": "Nov 26",
-   "sort": "2026-11-26T10:00:00+00:00",
-   "from": "ASW",
-   "to": "JED",
-   "from_city": "Aswan",
-   "to_city": "Jeddah",
-   "aircraft": "Embraer Legacy 600",
-   "category": "Super Midsize",
-   "seats": 8,
-   "operator": "Fly My Sky",
-   "price": "\u20ac5,400"
-  },
-  {
-   "id": "empty-leg-214487",
-   "date": "Nov 26",
-   "sort": "2026-11-26T14:57:00+00:00",
-   "from": "LSMP",
-   "to": "GVA",
-   "from_city": "Payerne",
-   "to_city": "Geneve",
-   "aircraft": "Cessna Citation M2",
-   "category": "Light",
-   "seats": 6,
-   "operator": "Transwing Ltd",
-   "price": "\u20ac2,925"
-  },
-  {
-   "id": "empty-leg-215184",
-   "date": "Nov 26",
-   "sort": "2026-11-26T20:05:00+00:00",
-   "from": "FKB",
-   "to": "STR",
-   "from_city": "Baden-Baden",
-   "to_city": "Stuttgart",
-   "aircraft": "Cessna Citation XLS+",
-   "category": "Midsize",
-   "seats": 7,
-   "operator": "DC Aviation GmbH",
-   "price": "\u20ac3,600"
-  },
   {
    "id": "empty-leg-214259",
    "date": "Nov 27",
@@ -170,6 +114,62 @@
    "seats": 8,
    "operator": "Fly My Sky",
    "price": "\u20ac15,120"
+  },
+  {
+   "id": "empty-leg-215056",
+   "date": "Nov 28",
+   "sort": "2026-11-28T00:00:00+00:00",
+   "from": "YYC",
+   "to": "PSP",
+   "from_city": "Calgary",
+   "to_city": "Palm Springs",
+   "aircraft": "Falcon 2000LXS",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$25,500"
+  },
+  {
+   "id": "empty-leg-214701",
+   "date": "Nov 28",
+   "sort": "2026-11-28T00:00:00+00:00",
+   "from": "YQR",
+   "to": "PDK",
+   "from_city": "Regina",
+   "to_city": "Atlanta",
+   "aircraft": "Global 5000",
+   "category": "Heavy",
+   "seats": 10,
+   "operator": "Chartright Air, Inc",
+   "price": "CA$37,000"
+  },
+  {
+   "id": "empty-leg-214688",
+   "date": "Nov 28",
+   "sort": "2026-11-28T00:00:00+00:00",
+   "from": "GRI",
+   "to": "OMA",
+   "from_city": "Grand Island",
+   "to_city": "Omaha",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$2,500"
+  },
+  {
+   "id": "empty-leg-214687",
+   "date": "Nov 28",
+   "sort": "2026-11-28T00:00:00+00:00",
+   "from": "OMA",
+   "to": "SFO",
+   "from_city": "Omaha",
+   "to_city": "San Francisco",
+   "aircraft": "Cessna Citation XLS",
+   "category": "Midsize",
+   "seats": 7,
+   "operator": "Silverhawk Aviation, Inc",
+   "price": "$7,500"
   }
  ]
 }
